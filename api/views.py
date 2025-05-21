@@ -31,6 +31,7 @@ class inscripcionesListCreateAPIView(ListCreateAPIView):
 class inscripcionesRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
     queryset = inscripciones.objects.all()
     serializer_class = inscripcionesSerializer
+    
 
     
     

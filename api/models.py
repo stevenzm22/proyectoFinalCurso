@@ -7,6 +7,21 @@ class categorias(models.Model):
     nombre = models.CharField(max_length=200)
     
     
+class cantones(models.Model):
+    nombre = models.CharField(max_length=200)
+    
+class empleados(models.Model):
+    nombre = models.CharField(max_length=200)
+    apellido = models.CharField(max_length=150)
+    email = models.EmailField()
+    
+    
+class patrocinadores(models.Model):
+    nombre = models.CharField(max_length=200)
+    tipoPatrocinio = models.CharField(max_length=222)
+    contratoDuracion = models.IntegerField()
+    
+
 class evento(models.Model):
     tituloEvento = models.CharField(max_length=200)
     fechaEvento = models.DateField()
@@ -17,11 +32,31 @@ class evento(models.Model):
     organizador = models.CharField(max_length=100)
     email = models.EmailField()
     categorias =  models.ForeignKey(categorias, on_delete=models.CASCADE,related_name='evento')
+    cantones = models.ForeignKey(cantones, on_delete=models.CASCADE, related_name='evento')
+    patrocinadores = models.ForeignKey(patrocinadores, on_delete=models.CASCADE, related_name='evento')
+    
     
 class inscripciones(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inscripciones')
     evento = models.ForeignKey(evento, on_delete=models.CASCADE, related_name='inscripciones')
     fecha_inscripcion = models.DateField()
+    
+    
+class comentarios(models.Model):
+    nombre = models.CharField(max_length=200)
+    texto = models.TextField()
+    fecha = models.DateField()
+
+
+class sugerencias(models.Model):
+    texto = models.TextField()
+    fecha = models.DateField()
+    
+class notificaciones(models.Model):
+    texto = models.TextField
+    fecha = models.DateField()
+    user= models.ForeignKey(User, on_delete=models.CASCADE, related_name='notificaciones')
+    
     
     
 
