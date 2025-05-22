@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 class categorias(models.Model):
     nombre = models.CharField(max_length=200)
     
-    
 class cantones(models.Model):
     nombre = models.CharField(max_length=200)
     
@@ -15,12 +14,10 @@ class empleados(models.Model):
     apellido = models.CharField(max_length=150)
     email = models.EmailField()
     
-    
 class patrocinadores(models.Model):
     nombre = models.CharField(max_length=200)
     tipoPatrocinio = models.CharField(max_length=222)
     contratoDuracion = models.IntegerField()
-    
 
 class evento(models.Model):
     tituloEvento = models.CharField(max_length=200)
