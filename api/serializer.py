@@ -27,6 +27,11 @@ class eventoSerializer(serializers.ModelSerializer):
     class Meta:
         model = evento
         fields = "__all__"
+        
+        def validate_nombre(self,value):
+            if len(value) <= 3:
+                raise serializers.ValidationError("El nombre del evento tiene que tener mas o igual a 3  caracteres")
+            return value
 
 class inscripcionesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,10 +43,20 @@ class cantonesSerializer(serializers.ModelSerializer):
         model = cantones
         fields = "__all__"
         
+        def validate_nombre(self,value):
+            if len(value) <= 3:
+                raise serializers.ValidationError("El nombre  tiene que tener mas  a 3  caracteres")
+            return value
+        
 class empleadosSerializer(serializers.ModelSerializer):
     class Meta:
         model = empleados
         fields = "__all__"
+        
+        def validate_nombre(self,value):
+            if len(value) <= 3:
+                raise serializers.ValidationError("El nombre  tiene que tener mas o igual a 3  caracteres")
+            return value
         
 class patrocinadoresSerializer(serializers.ModelSerializer):
     class Meta:
