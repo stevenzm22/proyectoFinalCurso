@@ -4,6 +4,8 @@ import TESTPAG from '../pages/TESTPAG';
 import Login from '../componentes/LOGIN/Login';
 import Register from '../componentes/REGISTER/Register';
 import HOMECLIENTE from '../pages/HOMECLIENTE';
+import EVENTO from '../pages/EVENTO';
+import CRUDEVENTO from '../componentes/HOME/CRUDEVENTO';
 
 
 
@@ -24,6 +26,8 @@ function Rutas() {
                     <Route path="Register" element={<Register/>}/>
                     <Route path="Login" element={<Login/>}/>
                     <Route path="Homeclientes" element={<HOMECLIENTE/>}/>
+                    <Route path="Evento" element={<EVENTO/>}/>
+                     <Route path="CrudEvento" element={<CRUDEVENTO/>}/>
                    
 
                       

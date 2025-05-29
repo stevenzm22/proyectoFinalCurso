@@ -1,0 +1,24 @@
+
+.li {
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#InputBuscar {
+   width: 40%;
+   height: 24px;
+   border-radius: 10px;
+}
+
+.btnNav {
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+

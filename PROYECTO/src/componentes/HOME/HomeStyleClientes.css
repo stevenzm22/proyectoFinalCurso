@@ -1,6 +1,63 @@
 
 #contenedorContenedores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "imagen1 imagen2"
+    "texto    texto"
+    "imagen3 imagen4";
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
 
+.contenedorImagen {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+#contenedorTexto {
+  grid-area: texto;
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#contenedorTexto2 {
+ display: flex;
+  background-color: #dbd9d9;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
    
 }
 
+
+    
+
+#imagen1 {
+    background-image: url("../HOME/palmares1.jpg");
+}
+#imagen2 {
+    background-image: url("../HOME/SAHARIENNE_COSTA-RICA-560x370.jpg");
+}
+
+#imagen3 {
+    background-image: url("../HOME/palmares1.jpg");
+}
+
+#imagen4 {
+    background-image: url("../HOME/palmares1.jpg");
+}
+
+#contenedorTitulosHome h1 , #contenedorTitulosHome h3 {
+    display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
