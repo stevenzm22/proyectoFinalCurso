@@ -9,9 +9,9 @@ function Test() {
   const [email, setEmail] = useState('');
 
   const [usuariosTareas, setUsuariosTareas] = useState([]);
-  const [selectedUser, setSelectedUser] = useState('');
+  const [selectedUser, setSelectedUser] = useState(null);
 
-  // Recuperar usuarios al cargar
+  // Cargar usuarios al inicio
   useEffect(() => {
     async function recuperarDatos() {
       const datos = await PostProductos.GetUser();
@@ -20,21 +20,29 @@ function Test() {
     recuperarDatos();
   }, []);
 
-  // Handlers para inputs
+  // Handlers
   const inputUsername = (e) => setUsername(e.target.value);
   const inputNombre = (e) => setFirstName(e.target.value);
   const inputApellido = (e) => setLastName(e.target.value);
   const inputEmail = (e) => setEmail(e.target.value);
   const inputContrasena = (e) => setPassword(e.target.value);
 
-  const handleSelectChange = (e) => {
-    setSelectedUser(e.target.value);
-    console.log("Usuario seleccionado:", e.target.value);
-  };
-
   const registrar = async () => {
     await PostProductos.PostProductos(Username, email, password, first_name, last_name);
-    alert('Datos guardados');
+    alert('Usuario registrado');
+  };
+
+  const handleSelectChange = (e) => {
+    const selectedId = parseInt(e.target.value);
+    const usuario = usuariosTareas.find((u) => u.id === selectedId);
+    if (usuario) {
+      setSelectedUser(usuario.id);
+      setUsername(usuario.username || '');
+      setFirstName(usuario.first_name || '');
+      setLastName(usuario.last_name || '');
+      setEmail(usuario.email || '');
+      setPassword(''); // Por seguridad, no se muestra
+    }
   };
 
   return (

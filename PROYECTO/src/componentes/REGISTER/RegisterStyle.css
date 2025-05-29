@@ -1,0 +1,80 @@
+
+#contenedorRegister {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+ 
+}
+
+#contenedorRegisterTitulo h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#contenedorForRegister label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#contenedorForRegister input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ccc;
+  
+}
+
+#contenedorForRegister input:focus {
+  outline: 2px solid #007bff;
+  background-color: #e6e6e6;
+ 
+}
+
+#contenedorP {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#contenedorP a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#contenedorExterno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* altura de pantalla completa */
+  background-image: url("../REGISTER/Flag_of_Costa_Rica.svg.png");/* fondo celeste */
+  background-size: cover;
+  background-position: center;
+}
+
+#botonRgistro {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#botonRgistro:hover {
+  background-color: #555;
+  transform: scale(1.03); /* efecto suave al pasar el mouse */
+}
+
+#botonRgistro:active {
+  transform: scale(0.97); /* efecto cuando se hace clic */
+}

@@ -1,17 +1,12 @@
 import React from 'react'
-
-import Test from '../../src/componentes/Testeo'
 import Register from '../componentes/REGISTER/Register'
 
-function TESTPAG() {
-
+function REGISTER() {
   return (
-
     <div>
-     
-      <Register/>
+        <Register/>
     </div>
   )
 }
 
-export default TESTPAG
+export default REGISTER

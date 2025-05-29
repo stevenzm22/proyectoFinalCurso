@@ -1,5 +1,5 @@
 
-import './App.css'
+
 import Rutas from './rutas/Rutas'
 
 function App() {

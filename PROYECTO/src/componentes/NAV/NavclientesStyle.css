@@ -1,0 +1,57 @@
+#navar {
+    list-style: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(15, 15, 41);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+}
+
+.li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.li a {
+    text-decoration: none;
+    color: rgb(245, 240, 240);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.li a:hover {
+    color: #490af5;
+    transform: scale(1.1);
+}
+
+#img {
+    margin: 5px;
+    width: 90px;
+    height: 55px;
+    transition: transform 0.3s ease;
+     border-radius: 10px 10px 10px 10px;
+}
+
+#img:hover {
+    transform: rotate(10deg);
+}
+
+.li p {
+    text-decoration: none;
+    color: rgb(252, 254, 255);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+}
+
+.li p:hover {
+    color: #490af5;
+    transform: scale(1.1);
+}
