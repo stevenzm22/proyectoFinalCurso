@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
- background-color: #ddd;
+ background-color: hsla(0, 3%, 79%, 0.699);
+ border-radius: 15px;
+ box-shadow:  0px 0px 0px 10px #0a0a0a85;
 }
 
 .event-form-container h1 {
@@ -63,14 +65,7 @@
   resize: vertical;
 }
 
-.checkbox-group {
-  display: flex;
-  align-items: center;
-}
 
-.checkbox-group input {
-  margin-right: 10px;
-}
 
 .submit-button {
   background-color: #490af5;
@@ -96,6 +91,8 @@
 
 #contenedorFOR {
     background-color: rgb(194, 240, 240);
+  
+
 }
 
 

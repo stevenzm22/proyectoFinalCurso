@@ -2,8 +2,11 @@ import React from 'react'
 import "../CRUDEVENTO/FormEvento.css"
 
 function FormEvento() {
+  
   return (
+    
     <div id='contenedorFOR'>
+      <br />
      <div className="event-form-container">
       <h1>Crear un nuevo evento</h1>
       <p>Completa el formulario con los detalles de tu evento para compartirlo con la comunidad.</p>

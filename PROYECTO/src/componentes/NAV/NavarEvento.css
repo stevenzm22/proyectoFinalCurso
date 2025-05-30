@@ -1,19 +1,69 @@
 
-.li {
-    color: aliceblue;
-    font-family: Arial, Helvetica, sans-serif;
+#navart {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 170px;
+    padding: 15px 25px;
+    background-color: #4a6fa5;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#InputBuscar {
-   width: 40%;
-   height: 24px;
-   border-radius: 10px;
+#imgt {
+    height: 30px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.btnNav {
-    width: 70px;
-    height: 25px;
-    border-radius: 10px;
+.lit {
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.lit:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#InputBuscart {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    min-width: 200px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btnNavt {
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.btnNavt:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo específico para el botón Buscar */
+.btnNavt:first-of-type {
+    background-color: #3a5a8f;
+}
+
+/* Estilo específico para el botón Salir */
+.btnNavt:last-of-type {
+    background-color: #d9534f;
 }
 
 

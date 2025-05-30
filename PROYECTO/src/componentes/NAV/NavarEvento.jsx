@@ -5,12 +5,12 @@ import "../NAV/NavarEvento.css"
 function NavarEvento() {
   return (
     <div>
-        <ul id='navar'>
-        <li><img  id='img' src={bandera} alt="" /></li>
-        <li className='li'>inicio</li>
-        <input id='InputBuscar' type="text" placeholder='Buscar' />
-        <button className='btnNav'>Buscar</button>
-        <button className='btnNav' >Salir</button>
+        <ul id='navart'>
+        <li><img  id='imgt' src={bandera} alt="" /></li>
+        <li className='lit'>inicio</li>
+        <input id='InputBuscart' type="text" placeholder='Buscar' />
+        <button className='btnNavt'>Buscar</button>
+        <button className='btnNavt' >Salir</button>
         </ul>
 
 
