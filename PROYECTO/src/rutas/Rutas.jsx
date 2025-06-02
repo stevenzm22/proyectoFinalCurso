@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TESTPAG from '../pages/TESTPAG';
-import Login from '../componentes/LOGIN/Login';
-import Register from '../componentes/REGISTER/Register';
+import LOGIN from '../pages/LOGIN';
+import REGISTER from '../pages/REGISTER';
 import HOMECLIENTE from '../pages/HOMECLIENTE';
 import EVENTO from '../pages/EVENTO';
 import CRUDEVENTO from '../componentes/HOME/CRUDEVENTO';
 import SobreNosotros from '../pages/SobreNosotros';
 import ContactosPag from '../pages/ContactosPag';
-
 
 
 function Rutas() {
@@ -21,8 +20,8 @@ function Rutas() {
                         
 
                     <Route path="test" element={<TESTPAG/>}/>
-                    <Route path="Register" element={<Register/>}/>
-                    <Route path="Login" element={<Login/>}/>
+                    <Route path="Register" element={<REGISTER/>}/>
+                    <Route path="Login" element={<LOGIN/>}/>
                     <Route path="/" element={<HOMECLIENTE/>}/>
                     <Route path="Evento" element={<EVENTO/>}/>
                     <Route path="CrudEvento" element={<CRUDEVENTO/>}/>

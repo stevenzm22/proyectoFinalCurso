@@ -13,11 +13,11 @@ function Contactos() {
 
         </p>
         <h1  className='h1'>Nuestro Valores</h1>
-       <h2>Comunidad</h2>
+       <h2 className='h2'>Comunidad</h2>
        <p  className='p'>Creemos en el poder de las comunidades unidas y en la importancia de crear espacios para la interacción
          social.
         </p>
-        <h2>Inclusión</h2>
+        <h2 className='h2'>Inclusión</h2>
         <p  className='p'>
             Nos esforzamos por crear una plataforma accesible para todos, independientemente de su origen, edad o 
             capacidades.

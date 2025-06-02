@@ -1,6 +1,8 @@
 
 #contendorFooter { 
     background-color: black;
+
+   
 }
 
 #contendorFooter h2, #contendorFooter p {
@@ -25,14 +27,13 @@ font-family: Arial, Helvetica, sans-serif;
 
 #contenedorFooter1 {
     align-items: start;
+     
 }
 
 #pFooter {
-   
    display: flex;
    justify-content: center;
    align-items: end;
- 
     
 }
 

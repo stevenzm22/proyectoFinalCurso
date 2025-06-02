@@ -30,7 +30,7 @@
   border-radius: 2px;
 }
 
-h2 {
+.h2 {
   color: #4a5568;
   font-size: 1.5rem;
   margin-top: 2rem;
@@ -40,7 +40,7 @@ h2 {
   align-items: center;
 }
 
-h2::before {
+.h2::before {
   content: '';
   display: inline-block;
   width: 8px;
@@ -76,7 +76,7 @@ h2::before {
     font-size: 1.8rem;
   }
   
-  h2 {
+  .h2 {
     font-size: 1.3rem;
   }
   
