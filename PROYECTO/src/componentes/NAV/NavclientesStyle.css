@@ -66,7 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(15, 15, 41);
+    background-color: rgb(78, 169, 243);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;     /* Ocupa todo el ancho */
     margin: 0;       /* Elimina márgenes por defecto */
@@ -80,7 +80,7 @@
 
 .li a {
     text-decoration: none;
-    color: rgb(245, 240, 240);
+    color: rgb(252, 247, 247);
     font-size: 1.2rem;
     font-weight: bold;
     padding: 10px 15px;
@@ -88,7 +88,7 @@
 }
 
 .li a:hover {
-    color: #490af5;
+    color: #181718;
     transform: scale(1.1);
 }
 
@@ -98,6 +98,7 @@
     height: 55px;
     transition: transform 0.3s ease;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px ;
 }
 
 #img:hover {
@@ -114,7 +115,7 @@
 }
 
 .li p:hover {
-    color: #490af5;
+    color: #111111;
     transform: scale(1.1);
 }
     

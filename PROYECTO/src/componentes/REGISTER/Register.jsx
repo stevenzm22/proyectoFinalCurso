@@ -5,12 +5,14 @@ import "../REGISTER/RegisterStyle.css"
 import { Link } from 'react-router-dom';
 
 function Register() {
+  // las constantes de los inputs
   const [Username, setUsername] = useState('');
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
+//las funciones para recoger la informacion
   function inputUsername(evento) {
     setUsername(evento.target.value)
   }
@@ -26,6 +28,7 @@ function inputEmail(evento) {
 function inputContrasena(evento) {
   setPassword(evento.target.value)
 }
+//hago una condicional con la libreria sweet alert 
 function registrar() {
     if (!Username.trim() || !first_name.trim() ||  !last_name.trim() || !password.trim() || !email.trim() ) {
         Swal.fire({
@@ -34,7 +37,7 @@ function registrar() {
           draggable: true
         });
   
-      } else {
+      } else { /* post a la tabla de auth_user */
         PostProductos.PostUser(password,Username,first_name,last_name,email)
   
         Swal.fire({
@@ -70,7 +73,7 @@ function registrar() {
 
         </div>
 
-        <div id='contenedorP'>
+        <div id='contenedorP'>  {/* un enlace del propio react-router-dom */}
             <p>Ya estas registrado?<Link to="/test">Iniciar Sesion</Link></p>
         </div>
 

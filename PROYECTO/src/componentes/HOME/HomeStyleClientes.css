@@ -16,6 +16,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+  box-shadow: 10px 10px 10px;
 }
 
 #contenedorTexto {
@@ -24,6 +25,7 @@
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #contenedorTexto2 {
@@ -35,11 +37,9 @@
   flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
    
 }
-
-
-    
 
 #imagen1 {
     background-image: url("../HOME/palmares1.jpg");
@@ -61,3 +61,4 @@
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
+

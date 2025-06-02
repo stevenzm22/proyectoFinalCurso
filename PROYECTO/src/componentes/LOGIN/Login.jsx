@@ -43,6 +43,7 @@ const [usuarios,setusuarios]=useState([])
         setContrasena(evento.target.value)
       }
 
+  //una condicional para comparar los datos ingresados con los de la base de datos
        function iniciar() {
              
               const encontrado = usuarios.filter(Usuario => Usuario.first_name===Nombre && Usuario.last_name &&  Usuario.password===Contrasena)
