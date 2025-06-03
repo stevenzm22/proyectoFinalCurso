@@ -1,6 +1,7 @@
 
 from django.urls import path
 from .views import  *
+from rest_framework_simplejwt.views import(TokenObtainPairView,TokenRefreshView)
 
 
 
@@ -37,6 +38,8 @@ urlpatterns = [
     
     path('roles/', GroupListCreateAPIView.as_view(), name='Usuarios-list-ceare'),
     path('roles/<int:pk>/', GroupRetrieveUpdateAPIView.as_view(), name='notificaciones-detail'),
+    
+    path('token/', TokenObtainPairView.as_view(), name='notificaciones-detail'),
 
 ]
 

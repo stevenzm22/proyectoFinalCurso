@@ -4,6 +4,7 @@ import "../LOGIN/LOGINSTYLE.css"
 import postProductos from "../../services/Usuarios"
 import Swal from "sweetalert2";
 
+
 function Login() {
 
 const [usuarios,setusuarios]=useState([])
@@ -14,7 +15,7 @@ const [usuarios,setusuarios]=useState([])
    
         async  function recuperarDatos() {
             const datos= await postProductos.GetUser()
-            console.log(datos);
+           // console.log(datos);
             
             setusuarios(datos)
         }
@@ -45,8 +46,12 @@ const [usuarios,setusuarios]=useState([])
 
   //una condicional para comparar los datos ingresados con los de la base de datos
        function iniciar() {
+        postProductos.PostApiToken(Nombre,Contrasena)
              
-              const encontrado = usuarios.filter(Usuario => Usuario.first_name===Nombre && Usuario.last_name &&  Usuario.password===Contrasena)
+             /*  const encontrado = usuarios.filter(Usuario => Usuario.username === Nombre && Usuario.last_name === Apellido &&  Usuario.password===Contrasena)
+            
+            console.log(usuarios[4])
+            
             
             if (encontrado.length === 0) {
                Swal.fire({
@@ -58,12 +63,13 @@ const [usuarios,setusuarios]=useState([])
               
               navigate("/test")
               
-             } 
+             }  */
       
             }
   
 
   return (
+
     <div id='contendorLOGIN'>
       <div id='contendortodoLOGIN'>
         <div id='contendorLogin'>

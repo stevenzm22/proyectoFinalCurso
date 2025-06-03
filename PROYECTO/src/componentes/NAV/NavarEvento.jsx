@@ -1,8 +1,15 @@
 import React from 'react'
 import bandera from "../NAV/flag.jpg"
 import "../NAV/NavarEvento.css"
+import { useNavigate } from 'react-router-dom'
 
 function NavarEvento() {
+  const navigate = useNavigate()
+  
+  function salir() {
+    navigate("/")
+    
+  }
   return (
     <div>
         <ul id='navart'>
@@ -10,7 +17,7 @@ function NavarEvento() {
         <li className='lit'>inicio</li>
         <input id='InputBuscart' type="text" placeholder='Buscar' />
         <button className='btnNavt'>Buscar</button>
-        <button className='btnNavt' >Salir</button>
+        <button onClick={salir} className='btnNavt' >Salir</button>
         </ul>
 
 

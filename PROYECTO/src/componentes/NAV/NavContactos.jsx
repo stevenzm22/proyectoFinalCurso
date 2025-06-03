@@ -3,6 +3,12 @@ import bandera from "../NAV/flag.jpg"
 import { Link, useNavigate } from 'react-router-dom';
 
 function NavContactos() {
+  const navigate = useNavigate()
+  
+  function salir() {
+    navigate("/")
+    
+  }
   return (
      <div  id='contenedorr'>
         <nav >
@@ -11,9 +17,9 @@ function NavContactos() {
                 <li className='li'><img id='img' src={bandera} alt="" /></li>
                 <li className='li'> <p>Conecta CR</p></li>
                 <li className='li'><Link to="/Evento">Eventos</Link></li>
-                <li className='li'><Link to="/">Acerca de</Link></li>
-                <li className='li'><Link to="/">Login</Link></li>
-                <button className='btnNavt'>Salir</button>
+                <li className='li'><Link to="/sobreNosotros">Acerca de</Link></li>
+                <li className='li'><Link to="/Login">Login</Link></li>
+                <button onClick={salir} className='btnNavt'>Salir</button>
 
             </ul>
           
