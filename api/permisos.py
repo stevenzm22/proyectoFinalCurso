@@ -7,7 +7,7 @@ class isadminUserGroup(BasePermission):
         return request.user and request.user.groups.filter(name="admin").exists()
     
     
-class isenfermerosUserGroup(BasePermission):
+class isUsuarioUserGroup(BasePermission):
     def has_permission(self, request, view):
         return request.user and request.user.groups.filter(name="usuarios").exists()
     

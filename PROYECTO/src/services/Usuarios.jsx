@@ -1,9 +1,12 @@
+const token = localStorage.getItem("token");
+
 async function GetUser() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/usuarios/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -131,7 +134,7 @@ async function PostApiToken(username, password) {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
-                /* "Authorization": `Bearer ${token}` */
+                 /* "Authorization": `Bearer ${token}`  */
             },
             body: JSON.stringify(userData2),
         });
@@ -143,6 +146,7 @@ async function PostApiToken(username, password) {
         }
 
         const result = await res.json();
+         return result.access;
         console.log("respuestas:", result);
         } catch (error) {
         console.error("Error:", error.message);

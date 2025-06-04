@@ -4,14 +4,13 @@ import "../LOGIN/LOGINSTYLE.css"
 import postProductos from "../../services/Usuarios"
 import Swal from "sweetalert2";
 
-
 function Login() {
 
 const [usuarios,setusuarios]=useState([])
 
-   const navigate= useNavigate()
+  const navigate= useNavigate()
    
-    useEffect(() => {
+    /* useEffect(() => {
    
         async  function recuperarDatos() {
             const datos= await postProductos.GetUser()
@@ -22,12 +21,12 @@ const [usuarios,setusuarios]=useState([])
      
         recuperarDatos()
     
-      }, []);
+      }, []); */
 
-      const [Nombre,setNombre]=useState("")
-      const [Apellido,setApellido]=useState("")
-      const [Cedula,setCedula]=useState("")
-      const [Contrasena,setContrasena]=useState("")
+    const [Nombre,setNombre]=useState("")
+    const [Apellido,setApellido]=useState("")
+    const [Cedula,setCedula]=useState("")
+    const [Contrasena,setContrasena]=useState("")
 
       function inputNombre(evento) {
         setNombre(evento.target.value)
@@ -44,27 +43,26 @@ const [usuarios,setusuarios]=useState([])
         setContrasena(evento.target.value)
       }
 
-  //una condicional para comparar los datos ingresados con los de la base de datos
-       function iniciar() {
-        postProductos.PostApiToken(Nombre,Contrasena)
+     async  function iniciar() {
+         try {
+        const token = await postProductos.PostApiToken(Nombre, Contrasena);
+        if (token) {
+            localStorage.setItem("token", token);
+           // localStorage.setItem("refresh_token", result.refresh);
+
+            navigate("/sobreNosotros"); 
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        }
+        } catch (error) {
+        
+        }
              
-             /*  const encontrado = usuarios.filter(Usuario => Usuario.username === Nombre && Usuario.last_name === Apellido &&  Usuario.password===Contrasena)
-            
-            console.log(usuarios[4])
-            
-            
-            if (encontrado.length === 0) {
-               Swal.fire({
-                       title: "usuario no encontrado",
-                       icon: "error",
-                       draggable: true
-                     });
-             }else{
-              
-              navigate("/test")
-              
-             }  */
-      
             }
   
 
@@ -77,11 +75,11 @@ const [usuarios,setusuarios]=useState([])
         </div>
 
         <div id='contenedorLogin'>
-          <label htmlFor="">nombre</label>
+          <label htmlFor="">Username</label>
           <input  value={Nombre} onChange={inputNombre} type="text" />
-          <label htmlFor="">apellido</label>
+          <label htmlFor="">Apellido</label>
           <input  value={Apellido} onChange={inputApellido} type="text" />
-          <label htmlFor="">contraseña</label>
+          <label htmlFor="">Contraseña</label>
           <input  value={Contrasena} onChange={inputContrasena} type="text" />
           <button onClick={iniciar}>Iniciar sesion</button>
         </div>

@@ -74,7 +74,7 @@ function registrar() {
         </div>
 
         <div id='contenedorP'>  {/* un enlace del propio react-router-dom */}
-            <p>Ya estas registrado?<Link to="/test">Iniciar Sesion</Link></p>
+            <p>Ya estas registrado?<Link to="/Login">Iniciar Sesion</Link></p>
         </div>
 
     </div>
