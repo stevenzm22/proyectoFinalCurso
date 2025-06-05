@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import  *
 from rest_framework_simplejwt.views import(TokenObtainPairView,TokenRefreshView)
-
+from rest_framework_simplejwt.views import TokenRefreshView
 
 
 urlpatterns = [
@@ -39,8 +39,8 @@ urlpatterns = [
     path('roles/', GroupListCreateAPIView.as_view(), name='Usuarios-list-ceare'),
     path('roles/<int:pk>/', GroupRetrieveUpdateAPIView.as_view(), name='notificaciones-detail'),
     
-    path('token/', TokenObtainPairView.as_view(), name='notificaciones-detail'),
-
+    path('login/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 

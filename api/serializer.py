@@ -1,6 +1,7 @@
 from .models import *
 from  rest_framework import serializers
 from django.contrib.auth.models import User, Group
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class categoriasSerializer(serializers.ModelSerializer):
     class Meta:
@@ -81,3 +82,14 @@ class notificacionesSerializer(serializers.ModelSerializer):
         model = notificaciones
         fields = "__all__"
         
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        # Obtener el grupo del usuario (rol)
+        groups = self.user.groups.values_list('name', flat=True)
+
+        # Agrega el primer grupo como 'role'
+        data['role'] = groups[0] if groups else None
+
+        return data

@@ -3,6 +3,7 @@ from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIVi
 from .models import *
 from .serializer import *
 from .permisos import *
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 
 # Create your views here.
@@ -113,11 +114,5 @@ class notificacionesRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
     queryset = notificaciones.objects.all()
     serializer_class = notificacionesSerializer
 
-    
-    
-  
-    
-    
-    
-    
-    
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer

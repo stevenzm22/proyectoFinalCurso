@@ -1,5 +1,11 @@
-const token = localStorage.getItem("token");
+/* const token = localStorage.getItem("token"); */
 
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("mi-token");
+console.log(Cookies.get());
+
+ 
 async function GetUser() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/usuarios/', {
@@ -130,7 +136,7 @@ async function PostApiToken(username, password) {
 
         console.log(userData2);
         
-        const res = await fetch("http://127.0.0.1:8000/api/token/", {
+        const res = await fetch("http://127.0.0.1:8000/api/login/", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
@@ -146,7 +152,9 @@ async function PostApiToken(username, password) {
         }
 
         const result = await res.json();
-         return result.access;
+        console.log(result);
+        
+         return result;
         console.log("respuestas:", result);
         } catch (error) {
         console.error("Error:", error.message);

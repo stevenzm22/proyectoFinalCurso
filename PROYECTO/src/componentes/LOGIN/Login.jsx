@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import "../LOGIN/LOGINSTYLE.css"
 import postProductos from "../../services/Usuarios"
 import Swal from "sweetalert2";
+import Cookies from 'js-cookie';
 
 function Login() {
 
@@ -46,26 +47,34 @@ const [usuarios,setusuarios]=useState([])
      async  function iniciar() {
          try {
         const token = await postProductos.PostApiToken(Nombre, Contrasena);
+        console.log(token);
+        
         if (token) {
-            localStorage.setItem("token", token);
+           /*  localStorage.setItem("token", token); */
            // localStorage.setItem("refresh_token", result.refresh);
+
+          Cookies.set("mi-token", token, {
+          expires: 1,          // 1 día
+          secure: false,         // solo HTTPS
+          sameSite: "Strict",  // protección CSRF
+          path: "/",
+          });
 
             navigate("/sobreNosotros"); 
         } else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="#">Why do I have this issue?</a>'
+            title: "datos incorrectos",
+            text: "llene los datos de nuevo",
+            
               });
         }
         } catch (error) {
         
         }
-             
+      
             }
   
-
   return (
 
     <div id='contendorLOGIN'>
