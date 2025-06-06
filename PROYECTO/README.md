@@ -31,4 +31,28 @@ If you are developing a production application, we recommend using TypeScript wi
               
              }  */
 
+en la funcion de eliminar
+
+ const token = await postProductos.PostApiToken(Nombre, Contrasena);
+        console.log(token);
+        
+        if (token) {
+           /*  localStorage.setItem("token", token); */
+           // localStorage.setItem("refresh_token", result.refresh);
+
+          /* Cookies.set("mi-token", token, {
+          expires: 1,          // 1 día
+          secure: false,         // solo HTTPS
+          sameSite: "Strict",  // protección CSRF
+          path: "/",
+          }); */
+/*  localStorage.setItem("token", token); */
+           // localStorage.setItem("refresh_token", result.refresh);
+
+          /* Cookies.set("mi-token", token, {
+          expires: 1,          // 1 día
+          secure: false,         // solo HTTPS
+          sameSite: "Strict",  // protección CSRF
+          path: "/",
+          }); */
 

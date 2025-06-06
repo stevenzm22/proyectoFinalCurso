@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import "../CRUDEVENTO/FormEvento.css"
+import llamadosCateegorias from '../../services/categorias ';
 
 function FormEvento() {
+  
+  const [usuariosTareas, setUsuariosTareas] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  useEffect(() => {
+    async function recuperarDatos() {
+      const datos = await llamadosCateegorias.GetCategorias();
+      setUsuariosTareas(datos);
+    }
+    recuperarDatos();
+  }, []);
+
+  const selectinput = (e) => {
+    const selectedId = parseInt(e.target.value);
+    setSelectedUser(selectedId);
+    // No se llena ningún input
+  };
+
   
   return (
     
@@ -22,13 +41,16 @@ function FormEvento() {
         <section className="form-section">
           <div className="form-row">
             <div className="form-group">
-              <label>Tipo de evento</label>
-              <select name="eventType">
-                <option value="Asesino">Asesino</option>
-                <option value="Conferencia">Conferencia</option>
-                <option value="Taller">Taller</option>
-                <option value="Social">Social</option>
-              </select>
+             
+            <label>Selecciona una categoria:</label>
+            <select value={selectedUser} onChange={selectinput}>
+              <option value="">-- Selecciona una categorias --</option>
+              {usuariosTareas.map((categorias) => (
+              <option key={categorias.id} value={categorias.id}>
+                  {categorias.nombre} 
+              </option>
+              ))}
+            </select>
             </div>
 
             <div className="form-group">

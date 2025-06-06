@@ -6,6 +6,7 @@ from .permisos import *
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 
+
 # Create your views here.
 
 class UserListCreateAPIView(ListCreateAPIView):
@@ -29,7 +30,7 @@ class GroupRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = GroupSerializer
 
 class categoriasListCreateAPIView(ListCreateAPIView):
-    permission_classes = [isadminUserGroup]
+    permission_classes = [IsAuthenticated, isadminUserGroup]
     queryset = categorias.objects.all()
     serializer_class = categoriasSerializer
     
@@ -116,3 +117,7 @@ class notificacionesRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+    
+    
+    
+    

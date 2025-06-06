@@ -46,19 +46,32 @@ const [usuarios,setusuarios]=useState([])
 
      async  function iniciar() {
          try {
-        const token = await postProductos.PostApiToken(Nombre, Contrasena);
-        console.log(token);
-        
-        if (token) {
-           /*  localStorage.setItem("token", token); */
-           // localStorage.setItem("refresh_token", result.refresh);
+       
+          const tokenData = await postProductos.PostApiToken(Nombre, Contrasena);
+    console.log(tokenData);
 
-          Cookies.set("mi-token", token, {
-          expires: 1,          // 1 día
-          secure: false,         // solo HTTPS
-          sameSite: "Strict",  // protección CSRF
-          path: "/",
-          });
+    if (tokenData && tokenData.access && tokenData.refresh && tokenData.role) {
+      // Guardar cada token en una cookie individual
+      Cookies.set("access_token", tokenData.access, {
+        expires: 1,
+        secure: true,
+        sameSite: "Strict",
+        path: "/",
+      });
+
+      Cookies.set("refresh_token", tokenData.refresh, {
+        expires: 7, // Por lo general el refresh token dura más
+        secure: true,
+        sameSite: "Strict",
+        path: "/",
+      });
+
+      Cookies.set("user_role", tokenData.role, {
+        expires: 1,
+        secure: true,
+        sameSite: "Strict",
+        path: "/",
+      });
 
             navigate("/sobreNosotros"); 
         } else {

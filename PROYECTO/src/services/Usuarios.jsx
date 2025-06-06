@@ -2,8 +2,8 @@
 
 import Cookies from 'js-cookie';
 
-const token = Cookies.get("mi-token");
-console.log(Cookies.get());
+const token = Cookies.get("access_token");
+
 
  
 async function GetUser() {

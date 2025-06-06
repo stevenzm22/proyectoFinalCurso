@@ -9,6 +9,8 @@ import CRUDEVENTO from '../componentes/HOME/CRUDEVENTO';
 import SobreNosotros from '../pages/SobreNosotros';
 import ContactosPag from '../pages/ContactosPag';
 
+import RutasPrivadas from '../rutas/Privada'
+
 
 function Rutas() {
 
@@ -19,7 +21,7 @@ function Rutas() {
       
                         
 
-                    <Route path="test" element={<TESTPAG/>}/>
+                     <Route path="test" element={<TESTPAG/>}/> 
                     <Route path="Register" element={<REGISTER/>}/>
                     <Route path="Login" element={<LOGIN/>}/>
                     <Route path="/" element={<HOMECLIENTE/>}/>
@@ -27,6 +29,7 @@ function Rutas() {
                     <Route path="CrudEvento" element={<CRUDEVENTO/>}/>
                     <Route path="sobreNosotros" element={<SobreNosotros/>}/>
                      <Route path="Contactenos" element={<ContactosPag/>}/>
+                     
                                
         </Routes>
       </Router>

@@ -9,7 +9,7 @@ function TESTPAG() {
 
     <div>
      
-      <Register/>
+      <Test/>
     </div>
   )
 }
