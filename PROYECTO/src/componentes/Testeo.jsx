@@ -5,7 +5,6 @@ import "../componentes/Test.css"
 function Test() {
   const [isActive, setIsActive] = useState(false);
 
-
   const toggleSidebar = () => {
       setIsActive(!isActive);
     };

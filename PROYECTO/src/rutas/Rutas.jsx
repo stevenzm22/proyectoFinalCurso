@@ -10,6 +10,7 @@ import SobreNosotros from '../pages/SobreNosotros';
 import ContactosPag from '../pages/ContactosPag';
 
 import RutasPrivadas from '../rutas/Privada'
+import HomeAdmin from '../pages/HomeAdmin';
 
 
 function Rutas() {
@@ -29,6 +30,7 @@ function Rutas() {
                     <Route path="CrudEvento" element={<CRUDEVENTO/>}/>
                     <Route path="sobreNosotros" element={<SobreNosotros/>}/>
                      <Route path="Contactenos" element={<ContactosPag/>}/>
+                     <Route path="admin" element={<HomeAdmin/>}/>
                      
                                
         </Routes>

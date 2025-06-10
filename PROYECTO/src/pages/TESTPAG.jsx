@@ -7,6 +7,7 @@ import PatrocinadoresCrud from '../componentes/Patrocinadores/PatrocinadoresCrud
 import CategoriasCrud from '../componentes/CrudCategorias/CategoriasCrud'
 import EmpleadosCrud from '../componentes/empleados/EmpleadosCrud'
 import CantonesCrud from '../componentes/CantonesCrud/CantonesCrud'
+import Sidebar from '../componentes/SIDEBAR/Sidebar'
 
 function TESTPAG() {
 
@@ -18,7 +19,8 @@ function TESTPAG() {
       <EmpleadosCrud/>
      <CantonesCrud/>
      <SugerenciasCrud/>
-       <Test/> 
+       {/* <Test/>  */}
+       <Sidebar/>
     </div>
   )
 }
