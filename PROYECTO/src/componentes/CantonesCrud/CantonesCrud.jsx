@@ -3,11 +3,11 @@ import "../CantonesCrud/cantonesStyle.css"
 
 function CantonesCrud() {
   return (
-    <div>
-        <h1>Formurlario de Cantones</h1>
-        <label htmlFor="">Nombre</label>
-        <input type="text" />
-        <button>enviar</button>
+    <div id='contenedorCantones'>
+        <h1  id='titulo'>Formurlario de Cantones</h1>
+        <label  className='labelCantones' htmlFor="">Nombre</label>
+        <input  className='inputCantones' type="text" />
+        <button id='buttunCantones'>enviar</button>
 
     </div>
   )

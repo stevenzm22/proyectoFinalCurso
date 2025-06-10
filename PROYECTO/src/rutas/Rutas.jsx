@@ -36,5 +36,4 @@ function Rutas() {
     </div>
   );
 }
-
 export default Rutas
