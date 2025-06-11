@@ -67,7 +67,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 4px 4px;
+  box-shadow: 4px 4px #1f4037bb;
 }
 
 #btnSidebar:hover {

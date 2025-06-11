@@ -11,7 +11,8 @@ import ContactosPag from '../pages/ContactosPag';
 
 import RutasPrivadas from '../rutas/Privada'
 import HomeAdmin from '../pages/HomeAdmin';
-
+import CrudEventoPag from '../pages/CrudEventoPag';
+import PerfilPag from '../pages/PerfilPag';
 
 function Rutas() {
 
@@ -20,19 +21,17 @@ function Rutas() {
       <Router>
         <Routes>
       
-                        
-
                      <Route path="test" element={<TESTPAG/>}/> 
                     <Route path="Register" element={<REGISTER/>}/>
                     <Route path="Login" element={<LOGIN/>}/>
                     <Route path="/" element={<HOMECLIENTE/>}/>
                     <Route path="Evento" element={<EVENTO/>}/>
-                    <Route path="CrudEvento" element={<CRUDEVENTO/>}/>
+                    <Route path="CrudEvento" element={<CrudEventoPag/>}/>
                     <Route path="sobreNosotros" element={<SobreNosotros/>}/>
-                     <Route path="Contactenos" element={<ContactosPag/>}/>
-                     <Route path="admin" element={<HomeAdmin/>}/>
-                     
-                               
+                    <Route path="Contactenos" element={<ContactosPag/>}/>
+                    <Route path="admin" element={<HomeAdmin/>}/>
+                    <Route path="Perfil" element={<PerfilPag/>}/>
+                                   
         </Routes>
       </Router>
     </div>

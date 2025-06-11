@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 
 const token = Cookies.get("access_token");
 
-
+////////// Get ///////////////////////
  
 async function GetUser() {
     try {
@@ -26,6 +26,32 @@ async function GetUser() {
         throw error;
     }
 }
+
+////////////////// GET ID //////////////////////////////
+
+async function GetUserid(id) {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/usuarios/'+id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+
+
+/////////////////// POST //////////////////////////////
 
 function getFormattedDateTime() {
   const now = new Date();
@@ -83,6 +109,8 @@ async function PostUser(password,username,first_name,last_name,email) {
         }
 }
 
+///////////////////////////// UPDATE //////////////////////////////
+
 async function UpdateUser(nombre,descripcion,precio,cantidad,categorias,id) {
     try {
         const userData = {nombre,descripcion,precio,cantidad,categorias,id };
@@ -106,6 +134,8 @@ async function UpdateUser(nombre,descripcion,precio,cantidad,categorias,id) {
     }
 }
 
+///////////////////// DELETE /////////////////////////////////////
+
 async function DeleteUser(id) {
     try {
         const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}`, {
@@ -126,6 +156,7 @@ async function DeleteUser(id) {
     }
 }
 
+/////////////////////// POST APITOKEN ///////////////////////
 
 async function PostApiToken(username, password) {
     try {
@@ -162,4 +193,4 @@ async function PostApiToken(username, password) {
         }
 }
 
-export default {GetUser,PostUser,UpdateUser,DeleteUser,PostApiToken};
+export default {GetUser,GetUserid,PostUser,UpdateUser,DeleteUser,PostApiToken};

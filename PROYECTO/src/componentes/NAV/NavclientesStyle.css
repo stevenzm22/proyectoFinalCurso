@@ -110,3 +110,20 @@ body {
   }
 }
 
+.icon {
+  color: #0c0c0c;         /* color blanco (puedes cambiarlo) */
+  font-size: 35px;        /* tamaño del icono */
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+#btnIcon:hover .icon {
+  color: #f7f8fa;         /* cambia color al hacer hover en el botón */
+  transform: scale(1.1);  /* pequeño zoom al pasar el cursor */
+  
+}
+
+#btnIcon{
+  background: #11111100;
+  border: none;
+  cursor: pointer;
+}
