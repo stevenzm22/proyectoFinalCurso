@@ -137,6 +137,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         # Agrega el primer grupo como 'role'
         data['role'] = groups[0] if groups else None
+        data['user_id'] = self.user.id 
 
         return data
     

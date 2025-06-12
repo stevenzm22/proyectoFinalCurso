@@ -55,25 +55,32 @@ const [usuarios,setusuarios]=useState([])
       Cookies.set("access_token", tokenData.access, {
         expires: 1,
         secure: true,
-        sameSite: "Strict",
+        sameSite: "Lax",
         path: "/",
       });
 
       Cookies.set("refresh_token", tokenData.refresh, {
-        expires: 7, // Por lo general el refresh token dura más
+        expires: 1, // Por lo general el refresh token dura más
         secure: true,
-        sameSite: "Strict",
+        sameSite: "Lax",
         path: "/",
       });
 
       Cookies.set("user_role", tokenData.role, {
         expires: 1,
         secure: true,
-        sameSite: "Strict",
+        sameSite: "Lax",
         path: "/",
       });
 
-            navigate("/sobreNosotros"); 
+      Cookies.set("user_id", tokenData.user_id, {
+        expires: 1,
+        secure: true,
+        sameSite: "Lax",
+        path: "/",
+      });
+
+            navigate("/"); 
         } else {
           Swal.fire({
             icon: "error",

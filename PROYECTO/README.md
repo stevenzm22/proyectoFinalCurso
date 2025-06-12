@@ -57,3 +57,13 @@ en la funcion de eliminar
           }); */
 
 zuñiga12345
+
+
+
+descodificar e ltoken
+
+import jwt_decode from 'jwt-decode';
+const payload = jwt_decode(token);
+
+
+

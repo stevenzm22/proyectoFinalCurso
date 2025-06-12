@@ -4,6 +4,8 @@ import Cookies from 'js-cookie';
 
 const token = Cookies.get("access_token");
 
+
+
 ////////// Get ///////////////////////
  
 async function GetUser() {
@@ -31,8 +33,9 @@ async function GetUser() {
 
 async function GetUserid(id) {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/usuarios/'+id, {
+        const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}/`, {
             method: 'GET',
+            /* credentials: "include", */
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -118,7 +121,8 @@ async function UpdateUser(nombre,descripcion,precio,cantidad,categorias,id) {
         const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -141,7 +145,8 @@ async function DeleteUser(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

@@ -5,28 +5,15 @@ import bandera from "../NAV/flag.jpg"
 import "../NAV/NavclientesStyle.css"
 import { VscAccount } from "react-icons/vsc";
 import Llamados from "../../services/Usuarios" 
+import Cookies from 'js-cookie';
 
 function Navclientes() {
 
-  const [usuarios,setusuarios]=useState([])
-
    const navigate= useNavigate()
    
-    useEffect(() => {
-   
-        async  function recuperarDatos() {
-            const datos= await Llamados.GetUser()
-            console.log(datos);
-    
-            setusuarios(datos)
-        }
-        recuperarDatos()
-    
-      }, []); 
-
-
-
-  function Userlogueado(id) {
+  function Userlogueado() {
+    navigate("/Perfil")
+  
 
   }
 
@@ -40,7 +27,7 @@ function Navclientes() {
                 <li className='li'><Link to="/Contactenos">Conctacto</Link></li>
                 <li className='li'><Link to="/Evento">Eventos</Link></li>
                 <li className='li'><Link to="/sobreNosotros">Acerca de</Link></li>
-                <li className='li'><button onAuxClick={Userlogueado} id='btnIcon'> <VscAccount className="icon" /> </button></li>
+                <li className='li'><button onClick={Userlogueado} id='btnIcon'> <VscAccount className="icon" /> </button></li>
                 <li className='li'><Link to="/Login">Login</Link></li>
 
             </ul>
