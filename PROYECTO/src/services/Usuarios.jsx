@@ -114,12 +114,12 @@ async function PostUser(password,username,first_name,last_name,email) {
 
 ///////////////////////////// UPDATE //////////////////////////////
 
-async function UpdateUser(nombre,descripcion,precio,cantidad,categorias,id) {
+async function UpdateUser(username,last_name,email,id) {
     try {
-        const userData = {nombre,descripcion,precio,cantidad,categorias,id };
+        const userData = {username,last_name,email,id };
 
-        const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}`, {
-            method: 'PUT',
+        const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}/`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

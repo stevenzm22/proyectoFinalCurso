@@ -14,6 +14,9 @@ function PerfilUsuario() {
 
 
  const [usuario, setUsuario] = useState([]);
+ const [Nombre,setNombre] = useState("")
+ const [Apellido,setApellido] = useState("")
+ const [Email,setEmail] = useState("")
 
   useEffect(() => {
     async function fetchData() {
@@ -21,15 +24,43 @@ function PerfilUsuario() {
 
     if (token) {
       const datillos = await llamados.GetUserid(id)
-      console.log(datillos);
-      
       setUsuario(datillos)
     }
     }
     fetchData()
+    
   }, []);
 
-console.log(usuario);
+  function inputNombre(evento) {
+  setNombre(evento.target.value)
+  }
+
+  function inputApellido(evento) {
+    setApellido(evento.target.value)
+  }
+
+  function inputEmail(evento) {
+    setEmail(evento.target.value)
+  }
+
+  function btneditarPerfil() {
+  
+  setNombre(usuario.username || "");
+  setApellido(usuario.last_name || "");
+  setEmail(usuario.email || "");
+ 
+  }
+
+  async function btnguardarPerfil() {
+     try {
+    await llamados.UpdateUser(Nombre, Apellido, Email,id);
+    alert("Perfil actualizado correctamente.");
+  } catch (error) {
+    console.error("Error al actualizar perfil:", error);
+    alert("Hubo un error al actualizar el perfil.");
+  }
+    
+  }
 
   return (
     <div className="profile-container">
@@ -44,13 +75,12 @@ console.log(usuario);
 
           {/*aqui ira un mapeo */}
               <h2>{usuario.username}</h2>
-              <p>{usuario.email}</p>
-       
+               <h3>{usuario.last_name}</h3>
+            
           <div className="info">
               
-           
-            <p>📍 Madrid, España</p>
-            <p>📅 Miembro desde Enero 2023</p>
+            <p>✉️{usuario.email}</p>
+            <p>📅 Miembro desde {usuario.date_joined}</p>
           </div>
         </div>
 
@@ -58,30 +88,25 @@ console.log(usuario);
         <div className="profile-right">
           <div className="header">
             <h3>Información Personal</h3>
-            <button className="edit-button">Editar Perfil</button>
+            <button onClick={btneditarPerfil} className="edit-button">Editar Perfil</button>
           </div>
 
           <div className="section">
             <h4>Datos Básicos</h4>
             <div className="input-group">
-              <input type="text" placeholder="Nombre" disabled />
-              <input type="text" placeholder="Apelido" disabled />
+              <input type="text" value={Nombre} onChange={inputNombre} placeholder="Nombre" />
+              <input type="text" value={Apellido} onChange={inputApellido} placeholder="Apelido" />
             </div>
           </div>
 
           <div className="section">
             <h4>Contacto</h4>
-            <input type="email" placeholder="email" disabled />
-            <input type="tel" placeholder="Numero de telefono" disabled />
-            <input type="text" placeholder="Ubicacion" disabled />
+            <input type="email" value={Email} onChange={inputEmail} placeholder="email" />
+            
           </div>
+          <br />
+          <button onClick={btnguardarPerfil} className="edit-button">Guardar Cambios</button>
 
-          {/* <div className="section">
-            <h4>Acerca de ti</h4>
-            <textarea rows="3" disabled>
-              Desarrolladora Frontend apasionada por crear experiencias de usuario excepcionales.
-            </textarea>
-          </div> */}
         </div>
 
       </div>

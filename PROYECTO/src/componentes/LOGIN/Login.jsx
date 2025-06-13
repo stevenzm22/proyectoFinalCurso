@@ -53,32 +53,34 @@ const [usuarios,setusuarios]=useState([])
     if (tokenData && tokenData.access && tokenData.refresh && tokenData.role) {
       // Guardar cada token en una cookie individual
       Cookies.set("access_token", tokenData.access, {
-        expires: 1,
-        secure: true,
+        expires: 7,
+        secure: false, 
         sameSite: "Lax",
         path: "/",
       });
 
       Cookies.set("refresh_token", tokenData.refresh, {
-        expires: 1, // Por lo general el refresh token dura más
-        secure: true,
+        expires: 7, // Por lo general el refresh token dura más
+       secure: false, 
         sameSite: "Lax",
         path: "/",
       });
 
       Cookies.set("user_role", tokenData.role, {
-        expires: 1,
-        secure: true,
+        expires: 7,
+        secure: false, 
         sameSite: "Lax",
         path: "/",
       });
 
       Cookies.set("user_id", tokenData.user_id, {
-        expires: 1,
-        secure: true,
+        expires: 7,
+       secure: false, 
         sameSite: "Lax",
         path: "/",
       });
+
+      
 
             navigate("/"); 
         } else {
