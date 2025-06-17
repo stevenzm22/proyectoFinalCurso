@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostProductos from '../../services/Usuarios';
+import llamadosAuthGroups from "../../services/UserGroups"
 import Swal from "sweetalert2";
 import "../REGISTER/RegisterStyle.css"
 import { Link } from 'react-router-dom';
@@ -29,7 +30,7 @@ function inputContrasena(evento) {
   setPassword(evento.target.value)
 }
 //hago una condicional con la libreria sweet alert 
-function registrar() {
+async function registrar() {
     if (!Username.trim() || !first_name.trim() ||  !last_name.trim() || !password.trim() || !email.trim() ) {
         Swal.fire({
           title: "ingrese los datos",
@@ -38,7 +39,13 @@ function registrar() {
         });
   
       } else { /* post a la tabla de auth_user */
-        PostProductos.PostUser(password,Username,first_name,last_name,email)
+        const resp = await PostProductos.PostUser(password,Username,first_name,last_name,email)
+        console.log(resp.id);
+        
+        const resp2 = await llamadosAuthGroups.PostUserGroups(resp.id)
+        console.log(resp2);
+
+        
   
         Swal.fire({
           title: "registro exitoso",

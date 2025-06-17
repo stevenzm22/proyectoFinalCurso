@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import "../SIDEBAR/SidebarStyle.css"
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 
 
 function Sidebar() {
      const [isActive, setIsActive] = useState(false);
-    
+     const navigate = useNavigate()
     
       const toggleSidebar = () => {
           setIsActive(!isActive);
+      }
+
+      function btnCerrarSeccion() {
+        Cookies.remove('access_token');  
+        Cookies.remove('refresh_token'); 
+        Cookies.remove('user_role'); 
+        Cookies.remove('user_id'); 
+        navigate("/")
+        
       }
 
   return (
@@ -17,15 +29,15 @@ function Sidebar() {
     <nav  className={`sidebar ${isActive ? 'active' : ''}`}>
       <ul>
 
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#"> Form Patrocinadores</a></li>
-        <li><a href="#">Form categorias</a></li>
-        <li><a href="#">Form comentarios</a></li>
-        <li><a href="#">Form cantones</a></li>
-        <li><a href="#">Form eventos</a></li>
-        <li><a href="#">Form sugerencias</a></li>
-        <li><a href="#">Form empleados</a></li>
-       <li><button id='btnSidebar'>Cerrar Seccion</button></li>
+        <li><a href="/Admin">Inicio</a></li>
+        <li><a href="/FormPatrocinadores"> Form Patrocinadores</a></li>
+        <li><a href="/Formcategorias">Form categorias</a></li>
+        <li><a href="/formComentarios">Form comentarios</a></li>
+        <li><a href="/Formcantones">Form cantones</a></li>
+        <li><a href="/CrudEvento">Form eventos</a></li>
+        <li><a href="FormSugerencias">Form sugerencias</a></li>
+        <li><a href="/FormEmpleados">Form empleados</a></li>
+       <li><button  id='btnSidebar'onClick={btnCerrarSeccion}>Cerrar Seccion</button></li>
 
         
       </ul>

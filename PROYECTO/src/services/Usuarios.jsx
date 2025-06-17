@@ -107,6 +107,7 @@ async function PostUser(password,username,first_name,last_name,email) {
 
         const result = await res.json();
         console.log("Usuario creado:", result);
+        return result;
         } catch (error) {
         console.error("Error:", error.message);
         }

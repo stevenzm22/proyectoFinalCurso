@@ -1,12 +1,12 @@
 import React from 'react'
-import NavarEvento from '../componentes/NAV/NavarEvento'
 import Footer from '../componentes/FOOTER/Footer'
+import Navclientes from '../componentes/NAV/Navclientes'
 
 function EVENTO() {
   return (
     <div>
 
-        <NavarEvento/>
+        <Navclientes/>
         <Footer/>
     </div>
   )

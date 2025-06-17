@@ -1,22 +1,9 @@
-
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react'
 import bandera from "../NAV/flag.jpg"
-import "../NAV/NavclientesStyle.css"
-import { VscAccount } from "react-icons/vsc";
-import Llamados from "../../services/Usuarios" 
-import Cookies from 'js-cookie';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navclientes() {
 
-   const navigate= useNavigate()
-   
-  function Userlogueado() {
-    navigate("/Perfil")
-  
-
-  }
-
+function NavClientes2() {
   return (
     <div  id='contenedorr'>
         <nav >
@@ -27,8 +14,8 @@ function Navclientes() {
                 <li className='li'><Link to="/Contactenos">Conctacto</Link></li>
                 <li className='li'><Link to="/Evento">Eventos</Link></li>
                 <li className='li'><Link to="/sobreNosotros">Acerca de</Link></li>
-                <li className='li'><button onClick={Userlogueado} id='btnIcon'> <VscAccount className="icon" /> </button></li>
-               
+                <li className='li'><Link to="/Login">Login</Link></li>
+
             </ul>
           
         </nav>
@@ -36,4 +23,4 @@ function Navclientes() {
   )
 }
 
-export default Navclientes
+export default NavClientes2
