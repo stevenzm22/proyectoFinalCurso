@@ -67,3 +67,12 @@ const payload = jwt_decode(token);
 
 
 
+
+
+const formData = new FormData();
+        formData.append('nombre', nombre);
+        formData.append('descripcion', descripcion);
+        formData.append('precio', precio);
+        formData.append('cantidad', cantidad);
+        formData.append('categorias', categorias);
+        formData.append('imagen', imagen); 

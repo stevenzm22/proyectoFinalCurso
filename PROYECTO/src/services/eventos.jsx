@@ -1,9 +1,15 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
 async function GetEventos() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/eventos/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -18,23 +24,38 @@ async function GetEventos() {
     }
 }
 
-async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,descripcion,organizador,email,cantones_id,categorias_id,patrocinadores_id) {
+async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,descripcion,organizador,email,cantones_id,categorias_id,patrocinadores_id,imagen) {
     try {
-        const userData = {tituloEvento,fechaEvento,hora,duracion,ubicacion,descripcion,organizador,email,cantones_id,categorias_id,patrocinadores_id};
+        const formData = new FormData();
+        formData.append('tituloEvento', tituloEvento);
+        formData.append('fechaEvento', fechaEvento);
+        formData.append('hora', hora);
+        formData.append('duracion', duracion);
+        formData.append('ubicacion', ubicacion);
+        formData.append('descripcion', descripcion);
+        formData.append('organizador', organizador);
+        formData.append('email', email);
+        formData.append('cantones_id', cantones_id);
+        formData.append('categorias_id', categorias_id);
+        formData.append('patrocinadores_id', patrocinadores_id);
+        formData.append('imagen', imagen); 
 
         const response = await fetch('http://127.0.0.1:8000/api/eventos/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(userData)
+            body:formData
         });
 
         if (!response.ok) {
             throw new Error('Error posting user');
         }
 
-        return await response.json();
+        const resp = await response.json();
+        console.log(resp);
+        return resp;
+        o
     } catch (error) {
         console.error('Error posting user:', error);
         throw error;
@@ -48,7 +69,8 @@ async function UpdateEventos(nombre,descripcion,precio,cantidad,categorias,id) {
         const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +91,8 @@ async function DeleteEventos(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

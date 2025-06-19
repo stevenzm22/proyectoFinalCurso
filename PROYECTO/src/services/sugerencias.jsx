@@ -1,9 +1,16 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
+
 async function GetSugerencias() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/sugerencias/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -25,7 +32,8 @@ async function PostSugerencias(texto,fecha) {
         const response = await fetch('http://127.0.0.1:8000/api/sugerencias/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -48,7 +56,8 @@ async function UpdateSugerencias(texto,fecha,id) {
         const response = await fetch(`http://127.0.0.1:8000/api/sugerencias/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +78,8 @@ async function DeleteSugerencias(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/sugerencias/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

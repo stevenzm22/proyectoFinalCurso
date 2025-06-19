@@ -1,3 +1,9 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
+
 async function GetInscripciones() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/inscripciones/', {
@@ -25,7 +31,8 @@ async function PostInscripciones(fecha_inscripcion,evento_id,usuario_id) {
         const response = await fetch('http://127.0.0.1:8000/api/inscripciones/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -48,7 +55,8 @@ async function UpdateInscripciones(nombre,descripcion,precio,cantidad,categorias
         const response = await fetch(`http://127.0.0.1:8000/api/inscripciones/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +77,8 @@ async function DeleteInscripciones(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/inscripciones/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

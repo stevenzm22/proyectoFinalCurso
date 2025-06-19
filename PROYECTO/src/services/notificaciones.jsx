@@ -1,3 +1,9 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
+
 async function GetNotificaciones() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/notificaciones/', {
@@ -25,7 +31,8 @@ async function PostNotificaciones(fecha,id_user) {
         const response = await fetch('http://127.0.0.1:8000/api/notificaciones/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -48,7 +55,8 @@ async function UpdateNotificaciones(nombre,descripcion,precio,cantidad,categoria
         const response = await fetch(`http://127.0.0.1:8000/api/notificaciones/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +77,8 @@ async function DeleteProductos(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/notificaciones/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

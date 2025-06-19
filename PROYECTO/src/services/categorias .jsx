@@ -32,7 +32,8 @@ async function PostCategorias(nombre) {
         const response = await fetch('http://127.0.0.1:8000/api/categorias/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -55,7 +56,8 @@ async function UpdateCategorias(nombre,id) {
         const response = await fetch(`http://127.0.0.1:8000/api/categorias/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -76,7 +78,8 @@ async function DeleteCategorias(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/categorias/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

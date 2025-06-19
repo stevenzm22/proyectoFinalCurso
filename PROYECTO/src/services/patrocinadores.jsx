@@ -1,9 +1,16 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
+
 async function GetPatrocinadores() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/patrocinadores/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -18,14 +25,15 @@ async function GetPatrocinadores() {
     }
 }
 
-async function PostPatrocinadores(nombre,tipoPatrocinio,duracionPatrocinio) {
+async function PostPatrocinadores(nombre,tipoPatrocinio,contratoDuracion) {
     try {
-        const userData = {nombre,tipoPatrocinio,duracionPatrocinio};
+        const userData = {nombre,tipoPatrocinio,contratoDuracion};
 
         const response = await fetch('http://127.0.0.1:8000/api/patrocinadores/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -41,14 +49,15 @@ async function PostPatrocinadores(nombre,tipoPatrocinio,duracionPatrocinio) {
     }
 }
 
-async function UpdatePatrocinadores(nombre,tipoPatrocinio,duracionPatrocinio,id) {
+async function UpdatePatrocinadores(nombre,tipoPatrocinio,contratoDuracion,id) {
     try {
-        const userData = {nombre,tipoPatrocinio,duracionPatrocinio,id };
+        const userData = {nombre,tipoPatrocinio,contratoDuracion,id };
 
         const response = await fetch(`http://127.0.0.1:8000/api/patrocinadores/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +78,8 @@ async function DeletePatrocinadores(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/patrocinadores/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

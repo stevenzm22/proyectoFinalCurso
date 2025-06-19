@@ -1,9 +1,15 @@
+
+import Cookies from 'js-cookie';
+
+const token = Cookies.get("access_token");
+
 async function GetComentarios() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/comentarios/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -25,7 +31,8 @@ async function PostComentarios(nombre,texto,fecha) {
         const response = await fetch('http://127.0.0.1:8000/api/comentarios/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -48,7 +55,8 @@ async function UpdateComentarios(nombre,descripcion,precio,cantidad,categorias,i
         const response = await fetch(`http://127.0.0.1:8000/api/comentarios/${id}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -69,7 +77,8 @@ async function DeleteComentarios(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/comentarios/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
