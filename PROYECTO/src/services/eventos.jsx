@@ -35,10 +35,10 @@ async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,desc
         formData.append('descripcion', descripcion);
         formData.append('organizador', organizador);
         formData.append('email', email);
-        formData.append('cantones_id', cantones_id);
-        formData.append('categorias_id', categorias_id);
-        formData.append('patrocinadores_id', patrocinadores_id);
-        formData.append('imagen', imagen); 
+        formData.append('cantones',parseInt( cantones_id));
+        formData.append('categorias',parseInt (categorias_id));
+        formData.append('patrocinadores',parseInt (patrocinadores_id));
+        formData.append('imagen',imagen); 
 
         const response = await fetch('http://127.0.0.1:8000/api/eventos/', {
             method: 'POST',
@@ -49,13 +49,15 @@ async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,desc
         });
 
         if (!response.ok) {
+            const errorData = await response.json();  // 👈 MOSTRAR el error exacto del backend
+            console.error('Error del backend:', errorData);
             throw new Error('Error posting user');
         }
 
         const resp = await response.json();
         console.log(resp);
         return resp;
-        o
+        
     } catch (error) {
         console.error('Error posting user:', error);
         throw error;

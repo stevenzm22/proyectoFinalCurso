@@ -104,7 +104,7 @@ function handleFileChange(e) {
   }
 
   function agregarEvento() {
-    if (!tituloEvento.trim() || !fecha.trim() || !hora.trim() || !duracion.trim() || !ubicacion.trim() || !descripcion.trim() || !organizacion.trim() || !Email.trim() ) {
+    if (!tituloEvento.trim() || !fecha.trim() || !hora.trim() || !duracion.trim() || !ubicacion.trim() || !descripcion.trim() || !organizacion.trim() || !Email.trim() || !select2.trim() || !selectedUser.trim() || !select3.trim()) {
         Swal.fire({
           title: "ingrese los datos",
           icon: "error",
@@ -112,7 +112,7 @@ function handleFileChange(e) {
         });
   
       } else { /* post a la tabla de auth_user */
-        llamdosEvento.PostEventos(tituloEvento,fecha,hora,duracion,ubicacion,descripcion,organizacion,Email)
+        llamdosEvento.PostEventos(tituloEvento,fecha,hora,duracion,ubicacion,descripcion,organizacion,Email,select2,selectedUser,select3,imagen)
   }
 
 }

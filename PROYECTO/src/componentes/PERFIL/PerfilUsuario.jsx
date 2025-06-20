@@ -81,7 +81,7 @@ function PerfilUsuario() {
           <div className="info">
               
             <p>✉️{usuario.email}</p>
-            <p>📅 Miembro desde {usuario.date_joined}</p>
+            <p>📅 Miembro desde {usuario.date_joined?.slice(0, 10)}</p>
           </div>
         </div>
 
