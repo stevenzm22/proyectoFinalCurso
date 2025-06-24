@@ -1,10 +1,10 @@
 
 #contenedorRegister {
   background-color: white;
-  padding: 30px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-  width: 300px;
+  width: 390px;
  
 }
 
@@ -18,10 +18,11 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #contenedorForRegister input {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin-bottom: 15px;
   border: none;
@@ -39,11 +40,13 @@
 #contenedorP {
   text-align: center;
   margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 #contenedorP a {
   color: #007bff;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #contenedorExterno {
@@ -51,7 +54,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* altura de pantalla completa */
-  background-image: url("../REGISTER/Flag_of_Costa_Rica.svg.png");/* fondo celeste */
+   background: linear-gradient(135deg, #a1c4fd, #c2e9fb);/* fondo celeste */
   background-size: cover;
   background-position: center;
 }

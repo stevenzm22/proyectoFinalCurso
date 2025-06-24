@@ -37,12 +37,12 @@
 
 .inputCategorias:focus {
   outline: none;
-  border-color: #66bb6a;
+  border-color: #0072ff;
   box-shadow: 0 0 5px #66bb6a55;
 }
 
 #buttunCategorias {
-  background: linear-gradient(135deg, #1f4037, #66bb6a);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
   color: white;
   padding: 0.75rem;
   border: none;

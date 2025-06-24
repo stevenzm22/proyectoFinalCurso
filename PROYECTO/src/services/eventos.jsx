@@ -24,6 +24,27 @@ async function GetEventos() {
     }
 }
 
+async function GetEventosId(id) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+
 async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,descripcion,organizador,email,cantones_id,categorias_id,patrocinadores_id,imagen) {
     try {
         const formData = new FormData();
@@ -110,4 +131,4 @@ async function DeleteEventos(id) {
 }
 
 
-export default {GetEventos,PostEventos,UpdateEventos,DeleteEventos};
+export default {GetEventos,GetEventosId,PostEventos,UpdateEventos,DeleteEventos};

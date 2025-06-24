@@ -80,8 +80,6 @@ const [usuarios,setusuarios]=useState([])
         path: "/",
       });
 
-      
-
             navigate("/"); 
         } else {
           Swal.fire({
