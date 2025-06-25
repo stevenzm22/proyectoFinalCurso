@@ -6,18 +6,30 @@ from django.contrib.auth.models import User
 class categorias(models.Model):
     nombre = models.CharField(max_length=200)
     
+    def __str__(self):
+        return self.nombre
+    
 class cantones(models.Model):
     nombre = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.nombre
     
 class empleados(models.Model):
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=150)
     email = models.EmailField()
     
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+    
 class patrocinadores(models.Model):
     nombre = models.CharField(max_length=200)
     tipoPatrocinio = models.CharField(max_length=222)
     contratoDuracion = models.IntegerField()
+    
+    def __str__(self):
+        return self.nombre
 
 class evento(models.Model):
     tituloEvento = models.CharField(max_length=200)
@@ -28,6 +40,7 @@ class evento(models.Model):
     descripcion = models.TextField()
     organizador = models.CharField(max_length=100)
     email = models.EmailField()
+    imagen = models.ImageField(upload_to='eventos/', null=True)
     categorias =  models.ForeignKey(categorias, on_delete=models.CASCADE,related_name='evento')
     cantones = models.ForeignKey(cantones, on_delete=models.CASCADE, related_name='evento')
     patrocinadores = models.ForeignKey(patrocinadores, on_delete=models.CASCADE, related_name='evento')

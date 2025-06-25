@@ -39,6 +39,9 @@ urlpatterns = [
     path('roles/', GroupListCreateAPIView.as_view(), name='Usuarios-list-ceare'),
     path('roles/<int:pk>/', GroupRetrieveUpdateAPIView.as_view(), name='notificaciones-detail'),
     
+    path('user_roles/', UserGroupCreatAPIView.as_view(), name='UsuariosGroups-list-ceare'),
+    path('user_roles/<int:pk>/', UserGroupRetrieveUpdateAPIView.as_view(), name='UsuariosGroups-list-ceare'),
+    
     path('login/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

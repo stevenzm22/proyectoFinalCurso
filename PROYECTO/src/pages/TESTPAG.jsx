@@ -22,8 +22,8 @@ function TESTPAG() {
       <EmpleadosCrud/>
      <CantonesCrud/>
      <SugerenciasCrud/>
-       {/* <Test/>  */}
-       <Sidebar/>
+        <Test/>  
+       {/* <Sidebar/> */}
     </div>
   )
 }

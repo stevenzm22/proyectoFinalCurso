@@ -3,27 +3,38 @@ import PostProductos from '../services/Usuarios';
 import "../componentes/Test.css"
 
 function Test() {
-  const [isActive, setIsActive] = useState(false);
-
-  const toggleSidebar = () => {
-      setIsActive(!isActive);
-    };
-
+   
+    function btnCerrarSeccion() {
+          Cookies.remove('access_token');  
+          Cookies.remove('refresh_token'); 
+          Cookies.remove('user_role'); 
+          Cookies.remove('user_id'); 
+          navigate("/")
+          
+        }
   return (
     <div>
-     
-      <button onClick={toggleSidebar}  className="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-
-    <nav  className={`sidebar ${isActive ? 'active' : ''}`}>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Patrocinadores</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Acerca de</a></li>
-      </ul>
-    </nav>
-  </div>
+      <div>
+        <aside className="custom-sidebar">
+          <ul className="sidebar-menu">
+            <h1 className="sidebar-title">PANEL</h1>
+             <li><a href="/Admin">Inicio</a></li>
+        <li><a href="/FormPatrocinadores"> Form Patrocinadores</a></li>
+        <li><a href="/Formcategorias">Form categorias</a></li>
+        <li><a href="/formComentarios">Form comentarios</a></li>
+        <li><a href="/Formcantones">Form cantones</a></li>
+        <li><a href="/CrudEvento">Form eventos</a></li>
+        <li><a href="FormSugerencias">Form sugerencias</a></li>
+        <li><a href="/FormEmpleados">Form empleados</a></li>
+        <li><a href="/usuarios">Form usuarios</a></li>
+       <li><button  id='btnSidebar'onClick={btnCerrarSeccion}>Cerrar Seccion</button></li>
+          </ul>
+        </aside>
+      </div>
+      <div>
+        
+      </div>
+    </div>
   );
 }
-
 export default Test;

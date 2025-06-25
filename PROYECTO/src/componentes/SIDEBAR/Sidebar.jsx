@@ -28,7 +28,7 @@ function Sidebar() {
 
     <nav  className={`sidebar ${isActive ? 'active' : ''}`}>
       <ul>
-
+        <br />
         <li><a href="/Admin">Inicio</a></li>
         <li><a href="/FormPatrocinadores"> Form Patrocinadores</a></li>
         <li><a href="/Formcategorias">Form categorias</a></li>
@@ -37,6 +37,7 @@ function Sidebar() {
         <li><a href="/CrudEvento">Form eventos</a></li>
         <li><a href="FormSugerencias">Form sugerencias</a></li>
         <li><a href="/FormEmpleados">Form empleados</a></li>
+        <li><a href="/usuarios">Form usuarios</a></li>
        <li><button  id='btnSidebar'onClick={btnCerrarSeccion}>Cerrar Seccion</button></li>
 
         
