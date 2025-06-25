@@ -45,7 +45,7 @@ async function UpdateRoles(name,id) {
     try {
         const userData = {name,id };
 
-        const response = await fetch(`http://127.0.0.1:8000/api/roles/${id}`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/roles/${id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

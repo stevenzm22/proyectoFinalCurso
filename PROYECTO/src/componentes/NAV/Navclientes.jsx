@@ -10,10 +10,14 @@ import Cookies from 'js-cookie';
 function Navclientes() {
 
    const navigate= useNavigate()
+    const isLoggedIn = Cookies.get("access_token")
    
   function Userlogueado() {
-    navigate("/Perfil")
-  
+    if (isLoggedIn) {
+      navigate('/perfil');
+    } else {
+      navigate('/login');
+    }
 
   }
 
@@ -27,7 +31,7 @@ function Navclientes() {
                 <li className='li'><Link to="/Contactenos">Conctacto</Link></li>
                 <li className='li'><Link to="/Evento">Eventos</Link></li>
                 <li className='li'><Link to="/sobreNosotros">Acerca de</Link></li>
-                <li className='li'><button onClick={Userlogueado} id='btnIcon'> <VscAccount className="icon" /> </button></li>
+                <li className='li'><button onClick={Userlogueado} id='btnIcon'> {isLoggedIn ? (<VscAccount className="icon" />) : (<span className="login-text">Login</span>)}</button></li>
                
             </ul>
           

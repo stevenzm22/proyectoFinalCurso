@@ -49,12 +49,17 @@ async function PostUserGroups(user, group=2) {
     }
 }
 
-async function UpdateUserGroups(user_id,id) {
+async function UpdateUserGroups(id, group) {
     try {
-        const userData = {user_id,group_id,id };
+        const userData = {
+            group
+        };
 
-        const response = await fetch(`http://127.0.0.1:8000/api/user_roles/${id}`, {
-            method: 'PUT',
+        console.log(userData, id);
+        
+
+        const response = await fetch(`http://127.0.0.1:8000/api/user_roles/${id}/`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

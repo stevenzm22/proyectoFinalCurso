@@ -7,16 +7,16 @@
   background: linear-gradient(to right, #d0e8ff, #b3d4fc, #90caf9);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  display: flex;
+ /*  display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; */
     
 }
 .detalles-container {
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  margin: 40px auto;
+   margin: 1px auto; 
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);

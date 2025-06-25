@@ -119,13 +119,28 @@ body {
 }
 
 #btnIcon:hover .icon {
-  color: #f7f8fa;         /* cambia color al hacer hover en el botón */
+  color: #f7f8faf1;         /* cambia color al hacer hover en el botón */
   transform: scale(1.1);  /* pequeño zoom al pasar el cursor */
   
 }
 
 #btnIcon{
-  background: #11111100;
+  background: #fffdfd00;
   border: none;
   cursor: pointer;
+}
+
+
+.login-text {
+  color: #f8fbfd;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.login-text:hover {
+  color: #eef1f3;
+  transform: scale(1.1);
+  text-decoration: none;
 }

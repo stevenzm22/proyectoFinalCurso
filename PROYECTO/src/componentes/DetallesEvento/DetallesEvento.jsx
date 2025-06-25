@@ -40,7 +40,7 @@ function DetallesEvento() {
             <FaClipboardList className="icono" /> Descripcion: {eventos.descripcion}
           </p>
           <p><FaCalendarAlt className="icono" /> {eventos.fechaEvento}</p>
-          <p><FaClock className="icono" /> Hora: {eventos.hora}     Duracion del evento: {eventos.duracion}</p>
+          <p><FaClock className="icono" /> Hora: {eventos.hora} -- </p> <p> <FaClock className="icono"/> Duracion del evento: {eventos.duracion}</p>
         </div>
 
         <div className="evento-extra">
