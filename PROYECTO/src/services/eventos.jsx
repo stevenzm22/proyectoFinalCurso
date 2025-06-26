@@ -85,12 +85,12 @@ async function PostEventos(tituloEvento,fechaEvento,hora,duracion,ubicacion,desc
     }
 }
 
-async function UpdateEventos(nombre,descripcion,precio,cantidad,categorias,id) {
+async function UpdateEventos(tituloEvento,ubicacion,descripcion,id) {
     try {
-        const userData = {nombre,descripcion,precio,cantidad,categorias,id };
+        const userData = {tituloEvento,ubicacion,descripcion };
 
-        const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}`, {
-            method: 'PUT',
+        const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}/`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -111,7 +111,7 @@ async function UpdateEventos(nombre,descripcion,precio,cantidad,categorias,id) {
 
 async function DeleteEventos(id) {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/eventos/${id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

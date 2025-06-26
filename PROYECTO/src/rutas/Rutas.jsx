@@ -23,6 +23,7 @@ import CrudUsuariosPag from '../pages/CRUD/CrudUsuariosPag';
 import EventoMostrarPag from '../pages/EventoMostrarPag';
 import SaberMasEvento from '../pages/SaberMasEvento';
 import MostarUsuarios from '../pages/MostarUsuarios';
+import MostrarEventoADPag from '../pages/MostrarEventoADPag';
 
 function Rutas() {
 
@@ -43,6 +44,7 @@ function Rutas() {
                     <Route path="eventospubli" element={<EventoMostrarPag/>}/>
                     <Route path="saberEvento" element={<SaberMasEvento/>}/>
                     <Route path="usuarios" element={<MostarUsuarios/>}/>
+                    <Route path="EventosAdmin" element={<MostrarEventoADPag/>}/>
 
 
                   {/*///////////////// RutasCRUDS/////////////////////// */}

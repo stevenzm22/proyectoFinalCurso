@@ -1,0 +1,86 @@
+
+.CardEvento {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 340px;
+  margin: 1rem auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.CardEvento:hover {
+  transform: translateY(-5px);
+}
+
+.ImagenEvento {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.ContenidoEvento {
+  padding: 1.2rem;
+}
+
+.ContenidoEvento h2 {
+  font-size: 1.3rem;
+  margin: 0.2rem 0;
+}
+
+.Descripcion {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.InfoEvento p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.Categoria span {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #444;
+  background-color: #f1f1f1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+
+.BotonSaberMas {
+  margin-top: 1rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  
+}
+
+.BotonSaberMas:hover {
+  background-color: #005fd1;
+}
+
+.GridCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr)); 
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #d4f6fb; /* celeste claro */
+}
+
+.BotonesEvento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Espacio entre botones */
+  margin-top: 1rem;
+  justify-content: space-between; /* o "center" si prefieres centrarlos */
+}
