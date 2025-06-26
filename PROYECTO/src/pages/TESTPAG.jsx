@@ -10,19 +10,21 @@ import CantonesCrud from '../componentes/CantonesCrud/CantonesCrud'
 import Sidebar from '../componentes/SIDEBAR/Sidebar'
 import Navclientes from '../componentes/NAV/Navclientes'
 import NavClientes2 from '../componentes/NAV/NavClientes2'
+import NavAmind from '../componentes/NAV/NavAmind'
 
 function TESTPAG() {
 
   return (
 
     <div>
-      <NavClientes2/>
+      <NavAmind/>
+      
       <PatrocinadoresCrud/>
       <CategoriasCrud/>
       <EmpleadosCrud/>
      <CantonesCrud/>
      <SugerenciasCrud/>
-        <Test/>  
+      <Test/>  
        {/* <Sidebar/> */}
     </div>
   )

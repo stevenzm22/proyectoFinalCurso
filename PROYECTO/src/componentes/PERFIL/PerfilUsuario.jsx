@@ -3,6 +3,7 @@ import "../PERFIL/PerrfilStyle.css"
 import Cookies from 'js-cookie';
 import llamados from "../../services/Usuarios"
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 /* const devolertoken = Cookies.get("access_token")
 console.log(devolertoken); */
@@ -11,6 +12,8 @@ function PerfilUsuario() {
 
   const id = Cookies.get("user_id")
   const token = Cookies.get("access_token");
+
+  const navigate = useNavigate()
 
 
  const [usuario, setUsuario] = useState([]);
@@ -63,6 +66,15 @@ function PerfilUsuario() {
     
   }
 
+  function btnCerrarSeccionPerfil() {
+       Cookies.remove('access_token');  
+            Cookies.remove('refresh_token'); 
+            Cookies.remove('user_role'); 
+            Cookies.remove('user_id'); 
+            navigate("/")
+    
+  }
+
   return (
     <div className="profile-container">
       <div className="profile-card">
@@ -71,7 +83,7 @@ function PerfilUsuario() {
         <div className="profile-left">
           <div className="profile-image-container">
             <div className="profile-image" />
-            <button className="edit-photo-button">📷</button>
+           {/*  <button className="edit-photo-button">📷</button> */}
           </div> 
 
           {/*aqui ira un mapeo */}
@@ -106,8 +118,10 @@ function PerfilUsuario() {
             
           </div>
           <br />
+          <div id='contenedor-botones-perfil'>
           <button onClick={btnguardarPerfil} className="edit-button">Guardar Cambios</button>
-
+           <button onClick={btnCerrarSeccionPerfil} className="edit-button">Cerrar Seccion</button>
+          </div>
         </div>
 
       </div>

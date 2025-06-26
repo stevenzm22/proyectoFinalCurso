@@ -11,18 +11,7 @@ const [usuarios,setusuarios]=useState([])
 
   const navigate= useNavigate()
    
-    /* useEffect(() => {
-   
-        async  function recuperarDatos() {
-            const datos= await postProductos.GetUser()
-           // console.log(datos);
-            
-            setusuarios(datos)
-        }
-     
-        recuperarDatos()
     
-      }, []); */
 
     const [Nombre,setNombre]=useState("")
     const [Apellido,setApellido]=useState("")
@@ -48,7 +37,7 @@ const [usuarios,setusuarios]=useState([])
          try {
        
           const tokenData = await postProductos.PostApiToken(Nombre, Contrasena);
-    console.log(tokenData);
+    
 
     if (tokenData && tokenData.access && tokenData.refresh && tokenData.role) {
       // Guardar cada token en una cookie individual
@@ -80,20 +69,28 @@ const [usuarios,setusuarios]=useState([])
         path: "/",
       });
 
-            navigate("/"); 
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "datos incorrectos",
-            text: "llene los datos de nuevo",
-            
-              });
-        }
-        } catch (error) {
-        
-        }
+      if (tokenData.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+      } else {
+      Swal.fire({
+        icon: "error",
+        title: "Datos incorrectos",
+        text: "Llena los datos de nuevo",
+      });
+    }
+     } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Ocurrió un error al iniciar sesión",
+    });
       
-            }
+  }
+      
+    }
   
   return (
 

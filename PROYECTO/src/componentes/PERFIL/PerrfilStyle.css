@@ -27,12 +27,13 @@
 .profile-image-container {
   position: relative;
   display: inline-block;
+ 
 }
 
 .profile-image {
   width: 100px;
   height: 100px;
-  background-color: #ccc;
+  background-color: #ccc; 
   border-radius: 50%;
   margin: auto;
 }
@@ -109,3 +110,10 @@ textarea {
   resize: none;
 }
 
+#contenedor-botones-perfil{
+   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Espacio entre botones */
+  margin-top: 1rem;
+  justify-content: space-between; 
+}
