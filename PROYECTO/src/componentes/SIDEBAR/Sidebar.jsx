@@ -30,15 +30,15 @@ function Sidebar() {
       <ul>
         <br />
         <li><a href="/Admin">Inicio</a></li>
-        <li><a href="/eventospubli">eventosPubli</a></li>
-        <li><a href="/FormPatrocinadores"> Form Patrocinadores</a></li>
-        <li><a href="/Formcategorias">Form categorias</a></li>
-        <li><a href="/formComentarios">Form comentarios</a></li>
-        <li><a href="/Formcantones">Form cantones</a></li>
+        <li><a href="/EventosAdmin">eventos Creados</a></li>
+        <li><a href="/FormPatrocinadores"> Crear Patrocinadores</a></li>
+        <li><a href="/Formcategorias">Crear Categorias</a></li>
+        <li><a href="/formComentarios">Crear Comentarios</a></li>
+        <li><a href="/Formcantones">Crear Cantones</a></li>
         <li><a href="/CrudEvento">Crear Eventos</a></li>
-        <li><a href="FormSugerencias">Form sugerencias</a></li>
-        <li><a href="/FormEmpleados">Form empleados</a></li>
-        <li><a href="/usuarios">Form usuarios</a></li>
+        <li><a href="FormSugerencias">Crear Sugerencias</a></li>
+        <li><a href="/FormEmpleados">Crear Empleados</a></li>
+        <li><a href="/usuarios">Form Usuarios</a></li>
        <li><button  id='btnSidebar'onClick={btnCerrarSeccion}>Cerrar Seccion</button></li>
 
       </ul>

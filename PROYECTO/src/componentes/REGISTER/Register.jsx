@@ -46,7 +46,6 @@ async function registrar() {
         console.log(resp2);
 
         
-  
         Swal.fire({
           title: "registro exitoso",
           icon: "success",

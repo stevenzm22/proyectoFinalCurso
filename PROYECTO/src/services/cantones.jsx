@@ -53,7 +53,7 @@ async function UpdateCantones(nombre,id) {
     try {
         const userData = {nombre,id };
 
-        const response = await fetch(`http://127.0.0.1:8000/api/cantones/${id}`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/cantones/${id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

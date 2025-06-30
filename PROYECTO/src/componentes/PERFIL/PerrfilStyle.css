@@ -27,13 +27,18 @@
 .profile-image-container {
   position: relative;
   display: inline-block;
+  background-image: url('../PERFIL/descarga.png'); /* Cambia esta ruta según tu imagen */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  border-radius: 50%;
  
 }
 
 .profile-image {
   width: 100px;
   height: 100px;
-  background-color: #ccc; 
+  /* background-color: #ccc;  */
   border-radius: 50%;
   margin: auto;
 }

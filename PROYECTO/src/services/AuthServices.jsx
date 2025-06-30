@@ -30,3 +30,4 @@ export async function refreshAccessToken() {
     throw error;
   }
 }
+export default refreshAccessToken

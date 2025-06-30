@@ -24,6 +24,7 @@ import EventoMostrarPag from '../pages/EventoMostrarPag';
 import SaberMasEvento from '../pages/SaberMasEvento';
 import MostarUsuarios from '../pages/MostarUsuarios';
 import MostrarEventoADPag from '../pages/MostrarEventoADPag';
+import PreguntasFrecuentesPag from '../pages/PreguntasFrecuentesPag';
 
 function Rutas() {
 
@@ -45,6 +46,7 @@ function Rutas() {
                     <Route path="saberEvento" element={<SaberMasEvento/>}/>
                     <Route path="usuarios" element={<MostarUsuarios/>}/>
                     <Route path="EventosAdmin" element={<MostrarEventoADPag/>}/>
+                    <Route path="PreguntasFrecuentes" element={<PreguntasFrecuentesPag/>}/>
 
 
                   {/*///////////////// RutasCRUDS/////////////////////// */}

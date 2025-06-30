@@ -1,40 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import PostProductos from '../services/Usuarios';
-import "../componentes/Test.css"
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-function Test() {
-   
-    function btnCerrarSeccion() {
-          Cookies.remove('access_token');  
-          Cookies.remove('refresh_token'); 
-          Cookies.remove('user_role'); 
-          Cookies.remove('user_id'); 
-          navigate("/")
-          
-        }
+export const Testeo = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+  e.preventDefault();
+  emailjs
+    .sendForm('service_46ldfpo', 'template_jdmqn6d', form.current, {
+        publicKey: '6r4alrcta6vJwFfsd',
+    })
+    .then(
+        () => {
+        console.log('SUCCESS!');
+        },
+        (error) => {
+        console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
-    <div>
-      <div>
-        <aside className="custom-sidebar">
-          <ul className="sidebar-menu">
-            <h1 className="sidebar-title">PANEL</h1>
-             <li><a href="/Admin">Inicio</a></li>
-        <li><a href="/FormPatrocinadores"> Form Patrocinadores</a></li>
-        <li><a href="/Formcategorias">Form categorias</a></li>
-        <li><a href="/formComentarios">Form comentarios</a></li>
-        <li><a href="/Formcantones">Form cantones</a></li>
-        <li><a href="/CrudEvento">Form eventos</a></li>
-        <li><a href="FormSugerencias">Form sugerencias</a></li>
-        <li><a href="/FormEmpleados">Form empleados</a></li>
-        <li><a href="/usuarios">Form usuarios</a></li>
-       <li><button  id='btnSidebar'onClick={btnCerrarSeccion}>Cerrar Seccion</button></li>
-          </ul>
-        </aside>
+      <div id='padre'>
+          <div id='ContainerFormContact'>
+              <form id='Formcontact' ref={form} onSubmit={sendEmail}>
+                  <div id="hijo">
+                      <label id='LabelContact'>Name</label><br />
+                      <input id='InputContactName' type="text" name="user_name" placeholder='Ingrese su nombre'/>
+                      <label id='LabelContact'>Email</label><br />
+                      <input id='InputContactEmail' type="email" name="user_email" placeholder='Ingrese su correo electronico'/>
+                  </div>
+                  <label id='LabelContact'>Message</label><br />
+                  <textarea name="mensaje" placeholder='Mensaje'/>
+                  <input type="submit" value="Send" id='BtnSubmit' />
+              </form>
+          </div>
       </div>
-      <div>
-        
-      </div>
-    </div>
   );
-}
-export default Test;
+};
+export default Testeo

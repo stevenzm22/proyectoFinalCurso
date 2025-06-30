@@ -105,7 +105,7 @@ function CrudUsuario() {
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Cédula</th>
+                
                 <th>Rol</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
@@ -117,7 +117,7 @@ function CrudUsuario() {
                 
                 <td><strong>{Usuario.username}</strong></td>
                 <td><strong>{Usuario.last_name}</strong></td>
-                <td><strong>{Usuario.last_name}</strong></td>
+               
                 <td><strong>{Usuario.rol}</strong></td>
                 <td><button onClick={e=>Editar(Usuario.id)}>Editar</button></td>
                 <td><button onClick={e=>Eliminar(Usuario.id)}>Eliminar</button></td>

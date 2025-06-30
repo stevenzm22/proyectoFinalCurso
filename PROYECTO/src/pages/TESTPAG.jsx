@@ -11,6 +11,7 @@ import Sidebar from '../componentes/SIDEBAR/Sidebar'
 import Navclientes from '../componentes/NAV/Navclientes'
 import NavClientes2 from '../componentes/NAV/NavClientes2'
 import NavAmind from '../componentes/NAV/NavAmind'
+import PreguntasFrecuentes from '../componentes/PreguntasFrecuentes/PreguntasFrecuentes'
 
 function TESTPAG() {
 
@@ -18,7 +19,7 @@ function TESTPAG() {
 
     <div>
       <NavAmind/>
-      
+      <PreguntasFrecuentes/>
       <PatrocinadoresCrud/>
       <CategoriasCrud/>
       <EmpleadosCrud/>

@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { MdAttachEmail } from "react-icons/md";
 import { ImPhone } from "react-icons/im";
 import "../CONTACTOS/ContactosStyle.css"
 
 function ContactosOficial() {
+   const form = useRef();
+  const sendEmail = (e) => {
+  e.preventDefault();
+  emailjs
+    .sendForm('service_46ldfpo', 'template_jdmqn6d', form.current, {
+        publicKey: '6r4alrcta6vJwFfsd',
+    })
+    .then(
+        () => {
+        console.log('SUCCESS!');
+        },
+        (error) => {
+        console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <div id='contenedor-contactos'>
 
@@ -28,8 +45,24 @@ function ContactosOficial() {
           </div>
          
        </div>
+      <div id='ContainerFormContact'>
+        <h1 id='h1-contactos'>Déjanos tu mensaje</h1>
+              <form id='Formcontact' ref={form} onSubmit={sendEmail}>
+                  <div id="hijo">
+                      <label id='LabelContact'>Nombre</label><br />
+                      <input id='InputContactName' type="text" name="user_name" placeholder='Ingrese su nombre'/>
+                      <label id='LabelContact'>Email</label><br />
+                      <input id='InputContactEmail' type="email" name="user_email" placeholder='Ingrese su correo electronico'/>
+                  </div>
+                  <label id='LabelContact'>Mensaje</label><br />
+                  <textarea  tarea name="mensaje" placeholder='Mensaje'/>
+                  <input type="submit" value="Send" id='BtnSubmit' />
+              </form>
+          </div>
 
     </div>
+
+    
   )
 }
 

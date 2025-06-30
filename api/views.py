@@ -76,7 +76,7 @@ class cantonesListCreateAPIView(ListCreateAPIView):
     serializer_class = cantonesSerializer
     
 class cantonessRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,isadminUserGroup]
     queryset = cantones.objects.all()
     serializer_class = cantonesSerializer
     

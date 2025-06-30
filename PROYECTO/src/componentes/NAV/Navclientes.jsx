@@ -29,10 +29,9 @@ function Navclientes() {
                 <li className='li'><img id='img' src={bandera} alt="" /></li>
                 <li className='li'><Link to="/">Conecta CR</Link> </li>
                 <li className='li'><Link to="/Contactenos">Conctacto</Link></li>
-                <li className='li'><Link to="/Evento">Eventos</Link></li>
+                <li className='li'><Link to="/eventospubli">Eventos</Link></li>
                 <li className='li'><Link to="/sobreNosotros">Acerca de</Link></li>
                 <li className='li'><button onClick={Userlogueado} id='btnIcon'> {isLoggedIn ? (<VscAccount className="icon" />) : (<span className="login-text">Login</span>)}</button></li>
-               
             </ul>
           
         </nav>

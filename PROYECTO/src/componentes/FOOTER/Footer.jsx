@@ -12,7 +12,7 @@ function Footer() {
   </div>
 
   <div id="footerLinks">
-    <Link className="link" to="/">Preguntas Frecuentes</Link>
+    <Link className="link" to="/PreguntasFrecuentes">Preguntas Frecuentes</Link>
     <Link className="link" to="/sobreNosotros">Acerca de</Link>
     <Link className="link" to="/Contactenos">Contacto</Link>
   </div>

@@ -82,6 +82,67 @@
 
 
 
+#ContainerFormContact {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#h1-contactos {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0073ff;
+  font-size: 28px;
+}
+
+.LabelContact {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.InputContact, .TextAreaContact {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.InputContact:focus, .TextAreaContact:focus {
+  border-color: #0073ff;
+  outline: none;
+}
+
+.TextAreaContact {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.BtnSubmit {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #0073ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.BtnSubmit:hover {
+  background: #005edb;
+}
 
 
 
