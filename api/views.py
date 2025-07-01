@@ -61,7 +61,7 @@ class eventoRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = eventoSerializer
 
 class inscripcionesListCreateAPIView(ListCreateAPIView):
-    permission_classes = [IsAuthenticated,isadminUserGroup]
+    """ permission_classes = [IsAuthenticated,isadminUserGroup] """
     queryset = inscripciones.objects.all()
     serializer_class = inscripcionesSerializer
     

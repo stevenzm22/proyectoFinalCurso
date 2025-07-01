@@ -24,9 +24,21 @@ async function GetInscripciones() {
     }
 }
 
-async function PostInscripciones(fecha_inscripcion,evento_id,usuario_id) {
+function getFormattedDateTime() {
+   const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`; // ✅ Solo la fecha
+}
+
+async function PostInscripciones(evento,usuario) {
     try {
-        const userData = {fecha_inscripcion,evento_id,usuario_id};
+        const userData = {
+            fecha_inscripcion: `${getFormattedDateTime()}`,
+            evento,
+            usuario
+        };
 
         const response = await fetch('http://127.0.0.1:8000/api/inscripciones/', {
             method: 'POST',
@@ -38,7 +50,9 @@ async function PostInscripciones(fecha_inscripcion,evento_id,usuario_id) {
         });
 
         if (!response.ok) {
-            throw new Error('Error posting user');
+             const errorDetails = await response.json(); // ⬅️ esto te da la causa exacta
+            console.error("Detalles del error del backend:", errorDetails);
+            throw new Error(JSON.stringify(errorDetails)); 
         }
 
         return await response.json();

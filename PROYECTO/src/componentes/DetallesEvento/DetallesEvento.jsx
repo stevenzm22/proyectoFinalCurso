@@ -3,9 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import llamdosEventos from "../../services/eventos";
 import "../DetallesEvento/DetallesEventoStyle.css";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUser, FaEnvelope, FaClipboardList } from "react-icons/fa";
+import Cookies from 'js-cookie';
+import llamadosInscripciones from "../../services/inscripciones"
+import Swal from "sweetalert2";
 
 function DetallesEvento() {
   const id = localStorage.getItem("evento_id");
+  const recuperarUsuarios = Cookies.get("user_id")
+  console.log(recuperarUsuarios);
+  
+
   const [eventos, setEventos] = useState({});
   const navigate = useNavigate();
 
@@ -17,11 +24,20 @@ function DetallesEvento() {
     recuperarDatos();
   }, [id]);
 
-  function registrarse() {
-    alert("¡Te has registrado al evento!");
-    // Aquí puedes agregar lógica para enviar info al backend
+ async function registrarse(id) {
+     if (!id) {
+    alert("❌ Error: No se encontró el ID del evento.");
+  } else if (!recuperarUsuarios) {
+    alert("❌ Error: No se encontró el usuario. Por favor inicia sesión.");
+  } else {
+    const resultados = await llamadosInscripciones.PostInscripciones(id,recuperarUsuarios);
+    Swal.fire({
+              title: "registro exitoso",
+              icon: "success",
+              draggable: true
+            });
   }
-
+ }
   return (
     <div id='contenedor-eve'>
     <div className="detalles-container">
@@ -50,7 +66,7 @@ function DetallesEvento() {
         </div>
 
         <div className="boton-contenedor">
-          <button className="boton-registrarse" onClick={registrarse}>Registrarse al evento</button>
+          <button className="boton-registrarse" onClick={e => registrarse(id)}>Registrarse al evento</button>
         </div>
       </div>
     </div>

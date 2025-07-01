@@ -1,14 +1,16 @@
 /* const token = localStorage.getItem("token"); */
 
 import Cookies from 'js-cookie';
+ import { useAuth } from '../services/AuthContext';
 
-const token = Cookies.get("access_token");
+/* const token = Cookies.get("access_token"); */
 
 
 
 ////////// Get ///////////////////////
  
 async function GetUser() {
+    const token = Cookies.get("access_token");
     try {
         const response = await fetch('http://127.0.0.1:8000/api/usuarios/', {
             method: 'GET',
@@ -32,6 +34,7 @@ async function GetUser() {
 ////////////////// GET ID //////////////////////////////
 
 async function GetUserid(id) {
+    const token = Cookies.get("access_token");
     try {
         const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}/`, {
             method: 'GET',
@@ -116,6 +119,7 @@ async function PostUser(password,username,first_name,last_name,email) {
 ///////////////////////////// UPDATE //////////////////////////////
 
 async function UpdateUser(username,last_name,email,id) {
+    const token = Cookies.get("access_token");
     try {
         const userData = {username,last_name,email,id };
 
@@ -142,6 +146,7 @@ async function UpdateUser(username,last_name,email,id) {
 ///////////////////// DELETE /////////////////////////////////////
 
 async function DeleteUser(id) {
+    const token = Cookies.get("access_token");
     try {
         const response = await fetch(`http://127.0.0.1:8000/api/usuarios/${id}/`, {
             method: 'DELETE',

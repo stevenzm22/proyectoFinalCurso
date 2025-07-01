@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import "../componentes/Test.css"
 
 export const Testeo = () => {
   const form = useRef();
@@ -32,6 +33,9 @@ export const Testeo = () => {
                   <textarea name="mensaje" placeholder='Mensaje'/>
                   <input type="submit" value="Send" id='BtnSubmit' />
               </form>
+              <div className="wrap">
+                <button className="button">Submit</button>
+            </div>
           </div>
       </div>
   );

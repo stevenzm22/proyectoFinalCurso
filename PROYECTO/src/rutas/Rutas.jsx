@@ -40,7 +40,7 @@ function Rutas() {
                     <Route path="Evento" element={<EVENTO/>}/>
                     <Route path="sobreNosotros" element={<SobreNosotros/>}/>
                     <Route path="Contactenos" element={<ContactosPag/>}/>
-                    <Route path="admin" element={<HomeAdmin/>}/>
+                    {/* <Route path="admin" element={<HomeAdmin/>}/> */}
                     <Route path="Perfil" element={<PerfilPag/>}/>
                     <Route path="eventospubli" element={<EventoMostrarPag/>}/>
                     <Route path="saberEvento" element={<SaberMasEvento/>}/>
@@ -51,7 +51,7 @@ function Rutas() {
 
                   {/*///////////////// RutasCRUDS/////////////////////// */}
                   
-
+                     <Route path="admin" element={<RutasPrivadas element={<HomeAdmin/>}/>}/>
                     <Route path="CrudEvento" element={<CrudEventoPag/>}/>
                     <Route path="FormSugerencias" element={<CrudSugerenciasPag/>}/>
                     <Route path="Formcantones" element={<CrudCantonesPag/>}/>

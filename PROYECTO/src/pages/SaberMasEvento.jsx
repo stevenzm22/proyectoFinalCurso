@@ -7,7 +7,9 @@ function SaberMasEvento() {
   return (
     <div>
       <Navclientes/>
+     
       <DetallesEvento/>
+     
       <Footer/>
 
     </div>
