@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { MdAttachEmail } from "react-icons/md";
 import { ImPhone } from "react-icons/im";
 import "../CONTACTOS/ContactosStyle.css"
+import Swal from "sweetalert2";
 
 function ContactosOficial() {
    const form = useRef();
@@ -15,6 +16,10 @@ function ContactosOficial() {
     .then(
         () => {
         console.log('SUCCESS!');
+        Swal.fire({
+            title: "Mensaje  enviado",
+            icon: "success",
+          });
         },
         (error) => {
         console.log('FAILED...', error.text);
@@ -55,7 +60,7 @@ function ContactosOficial() {
                       <input id='InputContactEmail' type="email" name="user_email" placeholder='Ingrese su correo electronico'/>
                   </div>
                   <label id='LabelContact'>Mensaje</label><br />
-                  <textarea  tarea name="mensaje" placeholder='Mensaje'/>
+                  <textarea name="mensaje" placeholder='Mensaje'/>
                   <input type="submit" value="Send" id='BtnSubmit' />
               </form>
           </div>

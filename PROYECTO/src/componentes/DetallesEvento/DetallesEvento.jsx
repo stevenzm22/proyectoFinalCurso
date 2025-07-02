@@ -40,6 +40,7 @@ function DetallesEvento() {
  }
   return (
     <div id='contenedor-eve'>
+      <br />
     <div className="detalles-container">
       <div className="imagen-container">
         <img src={eventos.imagen} alt={eventos.tituloEvento} className="evento-imagen" />
@@ -70,6 +71,16 @@ function DetallesEvento() {
         </div>
       </div>
     </div>
+
+      <br />
+      
+      <div id='contenedorYoutube'>
+        <h2 id='h2Youtube'>Comentarios</h2>
+        <input id='inputyoutube' type="text" placeholder='Agrega un comentario…' />
+        <button id='btnYoutube'>Comentar</button>
+
+      </div>
+
     </div>
   );
 }

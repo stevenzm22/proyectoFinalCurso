@@ -3,9 +3,11 @@ import PostProductos from '../../services/Usuarios';
 import llamadosAuthGroups from "../../services/UserGroups"
 import Swal from "sweetalert2";
 import "../REGISTER/RegisterStyle.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
+
+  const navigate = useNavigate()
   // las constantes de los inputs
   const [Username, setUsername] = useState('');
   const [first_name, setFirstName] = useState('');
@@ -31,28 +33,26 @@ function inputContrasena(evento) {
 }
 //hago una condicional con la libreria sweet alert 
 async function registrar() {
-    if (!Username.trim() || !first_name.trim() ||  !last_name.trim() || !password.trim() || !email.trim() ) {
-        Swal.fire({
-          title: "ingrese los datos",
-          icon: "error",
-          draggable: true
-        });
-  
-      } else { /* post a la tabla de auth_user */
-        const resp = await PostProductos.PostUser(password,Username,first_name,last_name,email)
-        console.log(resp.id);
-        
-        const resp2 = await llamadosAuthGroups.PostUserGroups(resp.id)
-        console.log(resp2);
+  if (!Username.trim() || !first_name.trim() || !last_name.trim() || !password.trim() || !email.trim()) {
+    Swal.fire({
+      title: "Ingrese todos los datos",
+      icon: "error",
+    });
+    return;
+  }
 
-        
-        Swal.fire({
-          title: "registro exitoso",
-          icon: "success",
-          draggable: true
-        });
-      }
+  const resp = await PostProductos.PostUser(password, Username, first_name, last_name, email);
+  console.log(resp);
   
+
+  const resp2 = await llamadosAuthGroups.PostUserGroups(resp.id);
+ 
+  Swal.fire({
+    title: "Registro exitoso",
+    icon: "success",
+  });
+
+  navigate("/Login")
 }
 
   return (

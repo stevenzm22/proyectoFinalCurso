@@ -44,17 +44,17 @@ class UserGroupThroughSerializer(serializers.ModelSerializer):
     group_name = serializers.SerializerMethodField()
     class Meta:
         model = UserGroup
-        fields = "__all__"
+        fields = ['id', 'user', 'group', 'group_name']
 
-    def validate(self, data):
+    """ def validate(self, data):
         user_id = data.get('user_id') or self.instance.user_id
         group_id = data.get('group_id') or self.instance.group_id
         if UserGroup.objects.filter(user_id=user_id, group_id=group_id).exclude(id=self.instance.id).exists():
             raise serializers.ValidationError("Ya tiene ese grupo asignado.")
-        return data
+        return data """
     
     def get_group_name(self, obj):
-        return obj.group.name
+        return obj.group.name 
 
 class cantonesSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,11 +1,9 @@
 /* const token = localStorage.getItem("token"); */
 
 import Cookies from 'js-cookie';
- import { useAuth } from '../services/AuthContext';
+ ;
 
 /* const token = Cookies.get("access_token"); */
-
-
 
 ////////// Get ///////////////////////
  
@@ -79,6 +77,7 @@ function getFormattedDateTime() {
 
 
 async function PostUser(password,username,first_name,last_name,email) {
+
     try {
 
         const userData2 = {
