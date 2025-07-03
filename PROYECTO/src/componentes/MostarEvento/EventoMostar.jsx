@@ -47,6 +47,7 @@ function EventoMostar() {
             </div>
 
             <button onClick={e => enviar(evento.id)} className="botonSaberMas">Saber más</button>
+            
           </div>
         </div>
       ))}

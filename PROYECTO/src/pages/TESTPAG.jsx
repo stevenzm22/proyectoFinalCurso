@@ -27,6 +27,7 @@ function TESTPAG() {
      <SugerenciasCrud/>
       <Test/>  
        {/* <Sidebar/> */}
+       <NavClientes2/>
     </div>
   )
 }

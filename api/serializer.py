@@ -137,6 +137,7 @@ class patrocinadoresSerializer(serializers.ModelSerializer):
             return value
         
 class comentariosSerializer(serializers.ModelSerializer):
+    nombre_usuario = serializers.SerializerMethodField()
     class Meta:
         model = comentarios
         fields = "__all__"
@@ -150,6 +151,9 @@ class comentariosSerializer(serializers.ModelSerializer):
         if len(value) <= 1:
             raise serializers.ValidationError("el texto debe tener minimo 1 caracteres")
         return value
+    
+    def get_nombre_usuario(self, obj):
+        return obj.usuario.username if obj.usuario else None
         
         
 class sugerenciasSerializer(serializers.ModelSerializer):

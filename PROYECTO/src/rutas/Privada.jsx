@@ -4,8 +4,9 @@ import Cookies from 'js-cookie';
 
 const PrivateRoute = ({ element }) => {
   const estasautenticado = !!Cookies.get("access_token");
+const rol = Cookies.get("user_role");
 
-  if (estasautenticado) {
+  if (estasautenticado && rol === "admin") {
     return element;
   } else {
     return <Navigate to="/" />;

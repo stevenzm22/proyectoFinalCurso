@@ -46,7 +46,7 @@ class categoriasListCreateAPIView(ListCreateAPIView):
     serializer_class = categoriasSerializer
     
 class categoriasRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [isadminUserGroup]
+    permission_classes = [IsAuthenticated]
     queryset = categorias.objects.all()
     serializer_class = categoriasSerializer
   
@@ -56,7 +56,7 @@ class eventoListCreateAPIView(ListCreateAPIView):
     serializer_class = eventoSerializer
     
 class eventoRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
-    """ permission_classes = [IsAuthenticated] """
+    permission_classes = [IsAuthenticated,] 
     queryset = evento.objects.all()
     serializer_class = eventoSerializer
 
@@ -66,7 +66,7 @@ class inscripcionesListCreateAPIView(ListCreateAPIView):
     serializer_class = inscripcionesSerializer
     
 class inscripcionesRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
-    """ permission_classes = [IsAuthenticated,isadminUserGroup] """
+    permission_classes = [IsAuthenticated,]
     queryset = inscripciones.objects.all()
     serializer_class = inscripcionesSerializer
     
@@ -105,6 +105,7 @@ class comentariosListCreateAPIView(ListCreateAPIView):
     serializer_class = comentariosSerializer
         
 class comentariosRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated,isadminUserGroup]
     queryset = comentarios.objects.all()
     serializer_class = comentariosSerializer
     
@@ -122,14 +123,11 @@ class notificacionesListCreateAPIView(ListCreateAPIView):
     serializer_class = notificacionesSerializer
         
 class notificacionesRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [isadminUserGroup]
+    permission_classes = [IsAuthenticated,isadminUserGroup]
     queryset = notificaciones.objects.all()
     serializer_class = notificacionesSerializer
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
-    
-    
-    
     
     

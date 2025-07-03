@@ -24,9 +24,21 @@ async function GetComentarios() {
     }
 }
 
-async function PostComentarios(nombre,texto,fecha) {
+function getFormattedDateTime() {
+   const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`; // ✅ Solo la fecha
+}
+
+async function PostComentarios(texto,usuario) {
     try {
-        const userData = {nombre,texto,fecha};
+        const userData = {
+            texto,
+            fecha :`${getFormattedDateTime()}`,
+            usuario
+        };
 
         const response = await fetch('http://127.0.0.1:8000/api/comentarios/', {
             method: 'POST',

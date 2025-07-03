@@ -40,7 +40,9 @@ function Rutas() {
                     <Route path="Evento" element={<EVENTO/>}/>
                     <Route path="sobreNosotros" element={<SobreNosotros/>}/>
                     <Route path="Contactenos" element={<ContactosPag/>}/>
+
                     {/* <Route path="admin" element={<HomeAdmin/>}/> */}
+                    
                     <Route path="Perfil" element={<PerfilPag/>}/>
                     <Route path="eventospubli" element={<EventoMostrarPag/>}/>
                     <Route path="saberEvento" element={<SaberMasEvento/>}/>
@@ -51,15 +53,23 @@ function Rutas() {
 
                   {/*///////////////// RutasCRUDS/////////////////////// */}
                   
-                     <Route path="admin" element={<RutasPrivadas element={<HomeAdmin/>}/>}/>
-                    <Route path="CrudEvento" element={<CrudEventoPag/>}/>
-                    <Route path="FormSugerencias" element={<CrudSugerenciasPag/>}/>
-                    <Route path="Formcantones" element={<CrudCantonesPag/>}/>
-                    <Route path="Formcategorias" element={<CrudCategorias/>}/>
-                    <Route path="formComentarios" element={<CrudComentariosPag/>}/>
-                    <Route path="FormEmpleados" element={<CrudEmpleados/>}/>
-                    <Route path="FormPatrocinadores" element={<CrudPatrocinadoresPag/>}/>
-                    <Route path="FormUsuario" element={<CrudUsuariosPag/>}/>
+                    <Route path="admin" element={<RutasPrivadas element={<HomeAdmin/>}/>}/>
+                    <Route path="CrudEvento" element={<RutasPrivadas element={<CrudEventoPag/>}/>}/>
+                    <Route path="FormSugerencias" element={<RutasPrivadas element={<CrudSugerenciasPag/>}/>}/>
+                    <Route path="Formcantones" element={<RutasPrivadas element={<CrudCantonesPag/>}/>}/>
+                    <Route path="Formcategorias" element={<RutasPrivadas element={<CrudCategorias/>}/>}/>
+                    <Route path="formComentarios" element={<RutasPrivadas element={<CrudComentariosPag/>}/>}/>
+                    <Route path="FormEmpleados" element={<RutasPrivadas element={<CrudEmpleados/>}/>}/>
+                    <Route path="FormPatrocinadores" element={<RutasPrivadas element={<CrudPatrocinadoresPag/>}/>}/>
+
+                    {/* <Route path="CrudEvento" element={<CrudEventoPag/>}/> */}
+                    {/* <Route path="FormSugerencias" element={<CrudSugerenciasPag/>}/> */}
+                    {/* <Route path="Formcantones" element={<CrudCantonesPag/>}/> */}
+                    {/* <Route path="Formcategorias" element={<CrudCategorias/>}/> */}
+                    {/* <Route path="formComentarios" element={<CrudComentariosPag/>}/> */}
+                    {/* <Route path="FormEmpleados" element={<CrudEmpleados/>}/> */}
+                    {/* <Route path="FormPatrocinadores" element={<CrudPatrocinadoresPag/>}/> */}
+                    {/* <Route path="FormUsuario" element={<CrudUsuariosPag/>}/> */}
 
 
 

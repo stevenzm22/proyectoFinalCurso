@@ -53,7 +53,7 @@ class inscripciones(models.Model):
     
     
 class comentarios(models.Model):
-    nombre = models.CharField(max_length=200)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comentarios')
     texto = models.TextField()
     fecha = models.DateField()
 

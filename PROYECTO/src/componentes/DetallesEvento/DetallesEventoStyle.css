@@ -102,7 +102,7 @@
 #inputyoutube {
   flex: 1;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #faf8f8;
   background-color: transparent;
   padding: 10px 0;
   font-size: 14px;
@@ -129,3 +129,39 @@
 #btnYoutube:hover {
   background-color: #054fc1;
 }
+
+
+#contenedorcomentarios {
+  
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: 2rem; /* o 0 si quieres pegado del borde */
+  font-family: Arial, sans-serif;
+  text-align: left;
+
+}
+
+.comentario {
+  padding: 1rem 0;
+  border-bottom: 1px solid #cfd8dc;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+.comentario:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.comentario-nombre {
+  font-weight: 600;
+  font-size: 15px;
+  color: #0f0f0f;
+  margin-bottom: 4px;
+}
+
+.comentario-texto {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+

@@ -2,6 +2,7 @@ import React from 'react'
 import ContactosOficial from '../componentes/CONTACTOS/ContactosOficial'
 import Navclientes from '../componentes/NAV/Navclientes'
 import Footer from '../componentes/FOOTER/Footer'
+import Sidebar from '../componentes/SIDEBAR/Sidebar'
 
 
 function ContactosPag() {
